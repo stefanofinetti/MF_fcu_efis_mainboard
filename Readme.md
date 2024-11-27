@@ -15,7 +15,7 @@ This repositories contains the complete FCU Mainboard project.
 ### Prerequisites
 - Software required: 
    * [KiCad](https://www.kicad.org/)
-   * [SketcuUp](https://www.sketchup.com)
+   * [SketchUp](https://www.sketchup.com)
    * [VsCode]
    * [MobiFlight]
 
@@ -25,4 +25,4 @@ This repositories contains the complete FCU Mainboard project.
 1. Clone the repository:
    ```bash
    git clone https://github.com/stefanofinetti/fcu-mainboard.git
-   
+

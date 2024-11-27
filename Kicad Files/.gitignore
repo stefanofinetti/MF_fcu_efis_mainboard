@@ -1,0 +1,10 @@
+*.bak
+*.tmp
+*.swp
+autosave*
+*.log
+*.net
+__pycache__/
+.DS_Store
+production/
+FCU_Mainboard_v3-backups/

@@ -10,6 +10,11 @@ This repositories contains the complete FCU Mainboard project.
 - You will need a lot of materials, if you open the Kicad Project you can obtain the BOM directly from it.
 - You will need to build your own custom firmware (source provided) or you can use the one in the ZIP file inside the \_dist directory in VsCode Files
 
+## License
+
+This code and all the items are release under GPLv3.0 license. Feel free to use as you wish as long as you redistribute the source code.
+It would be nice a mention, though, if you use this work. I invested a good amount of hours just to make it for the amazing MobiFlight community.
+
 
 ## Getting Started
 ### Prerequisites
@@ -21,8 +26,15 @@ This repositories contains the complete FCU Mainboard project.
 
 - Any libraries or components used.
 
+### Acknowledgements
+
+ This project couldn't have seen the light without the excellent work, and kind support, of [GaGagu](https://github.com/gagagu) and [ElRal](https://github.com/elral). Their work is amazing, so please have a look at their repositories
+
+
+
 ### Installation
 1. Clone the repository:
    ```bash
    git clone https://github.com/stefanofinetti/fcu-mainboard.git
+   ```
 

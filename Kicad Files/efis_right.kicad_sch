@@ -2647,7 +2647,6 @@
 	)
 	(label "R40"
 		(at 181.61 69.85 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2658,7 +2657,6 @@
 	)
 	(label "VOR 2"
 		(at 232.41 144.78 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2669,7 +2667,6 @@
 	)
 	(label "CSTR_BTN"
 		(at 60.96 60.96 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2680,7 +2677,6 @@
 	)
 	(label "ARPT_BTN"
 		(at 261.62 52.07 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2691,7 +2687,6 @@
 	)
 	(label "LS_BTN"
 		(at 261.62 64.77 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2702,7 +2697,6 @@
 	)
 	(label "R10"
 		(at 104.14 76.2 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2713,7 +2707,6 @@
 	)
 	(label "BARO_PULL"
 		(at 261.62 77.47 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2724,7 +2717,6 @@
 	)
 	(label "FD_BTN"
 		(at 60.96 35.56 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2735,7 +2727,6 @@
 	)
 	(label "WPT_BTN"
 		(at 261.62 54.61 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2746,7 +2737,6 @@
 	)
 	(label "ILS"
 		(at 104.14 52.07 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2757,7 +2747,6 @@
 	)
 	(label "MAP"
 		(at 181.61 57.15 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2768,7 +2757,6 @@
 	)
 	(label "R160"
 		(at 104.14 66.04 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2779,7 +2767,6 @@
 	)
 	(label "PLAN"
 		(at 104.14 41.91 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2790,7 +2777,6 @@
 	)
 	(label "BARO_hPa"
 		(at 261.62 72.39 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2801,7 +2787,6 @@
 	)
 	(label "BARO_inHg"
 		(at 261.62 69.85 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2812,7 +2797,6 @@
 	)
 	(label "ADF 1"
 		(at 232.41 135.89 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2823,7 +2807,6 @@
 	)
 	(label "MAP"
 		(at 104.14 46.99 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2834,7 +2817,6 @@
 	)
 	(label "ADF 2"
 		(at 261.62 80.01 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2845,7 +2827,6 @@
 	)
 	(label "R10"
 		(at 181.61 64.77 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2856,7 +2837,6 @@
 	)
 	(label "BARO_PULL"
 		(at 39.37 148.59 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2867,7 +2847,6 @@
 	)
 	(label "VOR 1"
 		(at 261.62 87.63 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2878,7 +2857,6 @@
 	)
 	(label "VORD_BTN"
 		(at 261.62 59.69 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2889,7 +2867,6 @@
 	)
 	(label "VORD_BTN"
 		(at 60.96 86.36 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2900,7 +2877,6 @@
 	)
 	(label "VOR"
 		(at 104.14 49.53 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2911,7 +2887,6 @@
 	)
 	(label "R20"
 		(at 181.61 67.31 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2922,7 +2897,6 @@
 	)
 	(label "ARC"
 		(at 181.61 59.69 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2933,7 +2907,6 @@
 	)
 	(label "ADF 2"
 		(at 232.41 147.32 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2944,7 +2917,6 @@
 	)
 	(label "VOR 1"
 		(at 232.41 133.35 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2955,7 +2927,6 @@
 	)
 	(label "LS_BTN"
 		(at 60.96 48.26 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2966,7 +2937,6 @@
 	)
 	(label "VOR 2"
 		(at 261.62 85.09 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2977,7 +2947,6 @@
 	)
 	(label "VOR"
 		(at 181.61 54.61 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2988,7 +2957,6 @@
 	)
 	(label "BARO_hPa"
 		(at 39.37 163.83 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2999,7 +2967,6 @@
 	)
 	(label "NDB_BTN"
 		(at 261.62 57.15 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3010,7 +2977,6 @@
 	)
 	(label "BARO_PUSH"
 		(at 39.37 156.21 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3021,7 +2987,6 @@
 	)
 	(label "R80"
 		(at 181.61 72.39 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3032,7 +2997,6 @@
 	)
 	(label "BARO_inHg"
 		(at 39.37 166.37 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3043,7 +3007,6 @@
 	)
 	(label "R160"
 		(at 181.61 74.93 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3054,7 +3017,6 @@
 	)
 	(label "ILS"
 		(at 181.61 52.07 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3065,7 +3027,6 @@
 	)
 	(label "R320"
 		(at 104.14 63.5 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3076,7 +3037,6 @@
 	)
 	(label "ADF 1"
 		(at 261.62 82.55 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3087,7 +3047,6 @@
 	)
 	(label "ARPT_BTN"
 		(at 60.96 111.76 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3098,7 +3057,6 @@
 	)
 	(label "R320"
 		(at 181.61 77.47 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3109,7 +3067,6 @@
 	)
 	(label "PLAN"
 		(at 181.61 62.23 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3120,7 +3077,6 @@
 	)
 	(label "BARO_PUSH"
 		(at 261.62 74.93 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3131,7 +3087,6 @@
 	)
 	(label "R20"
 		(at 104.14 73.66 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3142,7 +3097,6 @@
 	)
 	(label "R40"
 		(at 104.14 71.12 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3153,7 +3107,6 @@
 	)
 	(label "FD_BTN"
 		(at 261.62 67.31 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3164,7 +3117,6 @@
 	)
 	(label "WPT_BTN"
 		(at 60.96 73.66 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3175,7 +3127,6 @@
 	)
 	(label "CSTR_BTN"
 		(at 261.62 62.23 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3186,7 +3137,6 @@
 	)
 	(label "NDB_BTN"
 		(at 60.96 99.06 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3197,7 +3147,6 @@
 	)
 	(label "ARC"
 		(at 104.14 44.45 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3208,7 +3157,6 @@
 	)
 	(label "R80"
 		(at 104.14 68.58 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)

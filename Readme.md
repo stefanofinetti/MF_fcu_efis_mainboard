@@ -114,8 +114,25 @@ is the PSU board's own 1 A input polyfuse, not the adapter.
 | `PSU` | The 1 A input polyfuse caps the board at about a third of what the adapter can deliver |
 | `Backlighting_Dimmer`, `Backlighting_LEDModule` | The screw terminal footprint `TerminalBlock:TerminalBlock_bornier-2_P5.08mm` no longer exists in the KiCad library. KiCad 10 ships no 2-pin 5.08 mm terminal block at all, so there is nothing to point it at: retargeting it would change the pad geometry of a board that is already made. The copy embedded in the board is correct and is what gets manufactured; only the library link dangles |
 | `Korry_Large` | Four `+` and `-` markers on the back silkscreen are not mirrored. Both glyphs are symmetric so nothing reads wrong, and since they are justified `left bottom`, adding the mirror flag would shift them by about a glyph width. Left alone on purpose |
-| `Backlighting_LEDModule` | ERC reports the two power pins as undriven. It is a passive fan-out with no source of its own; a `PWR_FLAG` on each input pin silences it |
-| `PSU` | Still in KiCad 9 format; the four boards below it are in KiCad 8. Opening and saving each in KiCad 10 migrates them |
+
+## Libraries you will need
+
+All six projects are KiCad 10. Every board reports 0 unconnected items and 0
+schematic parity issues, but ERC and DRC still flag missing libraries: the
+symbols are embedded in the files so nothing is lost, only the links dangle.
+Install these from the Plugin and Content Manager to clear them:
+
+| Library | Used for |
+|---|---|
+| Alternate KiCad Library | `PCM_LED_AKL`, `PCM_LED_SMD_AKL`, `PCM_Diode_Schottky_AKL`, `PCM_Diode_SMD_AKL` |
+| Digi-Key library | `dk_Tactile-Switches`, `dk_Clock-Timing-Programmable-Timers-and-Oscillators` |
+| SL Screw Terminal | `PCM_SL_Screw_Terminal` |
+
+The remaining `lib_footprint_mismatch` warnings are footprints that changed
+between the KiCad version each board was drawn in and version 10. Running
+`Update Footprints from Library` clears them, but it does change pad and
+silkscreen geometry, so it is worth reading the diff before doing it on a
+board that is already made.
 
 ## Gotchas
 

@@ -1966,7 +1966,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "91"
 			(at 96.52 95.25 0)
 			(effects
 				(font
@@ -2307,7 +2307,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "220"
 			(at 101.6 45.72 90)
 			(effects
 				(font

@@ -2675,7 +2675,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "153eba98-7d79-48b4-91c5-3f4b335c656c")
-		(property "Reference" "J73"
+		(property "Reference" "J14"
 			(at 218.44 54.61 0)
 			(effects
 				(font
@@ -2729,7 +2729,7 @@
 		(instances
 			(project "FCU_Mainboard_v2"
 				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/7ac51fd7-f93f-468f-8c10-b814dd9f4aef"
-					(reference "J73")
+					(reference "J14")
 					(unit 1)
 				)
 			)
@@ -3057,7 +3057,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R 5K"
+		(property "Value" "5K"
 			(at 224.79 104.14 0)
 			(effects
 				(font
@@ -3278,7 +3278,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C 10nF"
+		(property "Value" "10nF"
 			(at 181.61 111.76 0)
 			(effects
 				(font
@@ -3793,7 +3793,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9f18db7b-4349-4919-bfc7-c8c64d1f2402")
-		(property "Reference" "J93"
+		(property "Reference" "J32"
 			(at 144.78 165.1 0)
 			(effects
 				(font
@@ -3847,7 +3847,7 @@
 		(instances
 			(project "FCU_Mainboard_v2"
 				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/7ac51fd7-f93f-468f-8c10-b814dd9f4aef"
-					(reference "J93")
+					(reference "J32")
 					(unit 1)
 				)
 			)
@@ -3876,7 +3876,7 @@
 				)
 			)
 		)
-		(property "Value" "C 10uF"
+		(property "Value" "10uF"
 			(at 199.39 82.55 90)
 			(effects
 				(font
@@ -3945,7 +3945,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R 1K"
+		(property "Value" "1K"
 			(at 157.48 54.61 0)
 			(effects
 				(font
@@ -4215,7 +4215,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b3c75d66-1471-4d95-b789-fc97f49d996c")
-		(property "Reference" "U2"
+		(property "Reference" "U1"
 			(at 192.6941 83.82 0)
 			(effects
 				(font
@@ -4370,7 +4370,7 @@
 		(instances
 			(project "FCU_Mainboard_v2"
 				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/7ac51fd7-f93f-468f-8c10-b814dd9f4aef"
-					(reference "U2")
+					(reference "U1")
 					(unit 1)
 				)
 			)
@@ -4400,7 +4400,7 @@
 				)
 			)
 		)
-		(property "Value" "C 100nF"
+		(property "Value" "100nF"
 			(at 196.85 66.04 90)
 			(effects
 				(font
@@ -4460,7 +4460,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c5ce806c-84cd-419d-8435-5395e198f082")
-		(property "Reference" "J73"
+		(property "Reference" "J13"
 			(at 241.3 54.61 0)
 			(effects
 				(font
@@ -4514,7 +4514,7 @@
 		(instances
 			(project "FCU_Mainboard_v2"
 				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/7ac51fd7-f93f-468f-8c10-b814dd9f4aef"
-					(reference "J73")
+					(reference "J13")
 					(unit 1)
 				)
 			)
@@ -4536,7 +4536,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cbb2bdf5-6c43-4373-a6eb-dd16287bcb66")
-		(property "Reference" "J73"
+		(property "Reference" "J12"
 			(at 262.89 54.61 0)
 			(effects
 				(font
@@ -4590,7 +4590,7 @@
 		(instances
 			(project "FCU_Mainboard_v2"
 				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/7ac51fd7-f93f-468f-8c10-b814dd9f4aef"
-					(reference "J73")
+					(reference "J12")
 					(unit 1)
 				)
 			)
@@ -4621,7 +4621,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C 470nF"
+		(property "Value" "470nF"
 			(at 158.75 109.22 0)
 			(effects
 				(font
@@ -4831,7 +4831,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f3a02b93-8faf-4f25-9e00-0a740545bf63")
-		(property "Reference" "J12"
+		(property "Reference" "J31"
 			(at 149.86 83.82 90)
 			(effects
 				(font
@@ -4888,7 +4888,7 @@
 		(instances
 			(project "FCU_Mainboard_v2"
 				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3"
-					(reference "J12")
+					(reference "J31")
 					(unit 1)
 				)
 				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/7ac51fd7-f93f-468f-8c10-b814dd9f4aef"

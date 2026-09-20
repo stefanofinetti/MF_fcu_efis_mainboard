@@ -112,12 +112,10 @@ is the PSU board's own 1 A input polyfuse, not the adapter.
 | `PSU` | **The LM2596 has no catch diode.** A non-synchronous buck requires a Schottky from the switch node to ground; the only diode on the board is in series with the input. The part runs out of spec and the effect worsens with load |
 | `PSU` | `C1` 100 µF and `C2` 220 µF are on 1206 footprints. Those values are implausible as ceramics, and an LM2596 wants some ESR on its output for loop stability. Check what is actually fitted |
 | `PSU` | The 1 A input polyfuse caps the board at about a third of what the adapter can deliver |
-| `Korry_*` | `RG` and `RW` have no value assigned in the schematics. Fitted parts are 220 Ω (green) and 91 Ω (white) |
-| `Backlighting_Dimmer` | The footprint value fields on the board hold the reference (`C1`, `C2`, …) instead of the schematic value (470 nF, 10 nF, …). A BOM taken from the board is wrong until `Update PCB from Schematic` is run |
-| `Backlighting_Dimmer` | The screw terminal footprint `TerminalBlock:TerminalBlock_bornier-2_P5.08mm` no longer exists in the KiCad library. The copy embedded in the board is fine; only the link is broken |
-| `Korry_Large` | Four texts on the back silkscreen are not mirrored, so they read reversed on the finished board |
-| `Backlighting_LEDModule` | ERC reports the power pins as undriven. It is a passive fan-out with no source of its own, so this is expected |
-| all but `Mainboard` | Still saved in KiCad 9 format. Opening and saving them in KiCad 10 migrates them |
+| `Backlighting_Dimmer`, `Backlighting_LEDModule` | The screw terminal footprint `TerminalBlock:TerminalBlock_bornier-2_P5.08mm` no longer exists in the KiCad library. KiCad 10 ships no 2-pin 5.08 mm terminal block at all, so there is nothing to point it at: retargeting it would change the pad geometry of a board that is already made. The copy embedded in the board is correct and is what gets manufactured; only the library link dangles |
+| `Korry_Large` | Four `+` and `-` markers on the back silkscreen are not mirrored. Both glyphs are symmetric so nothing reads wrong, and since they are justified `left bottom`, adding the mirror flag would shift them by about a glyph width. Left alone on purpose |
+| `Backlighting_LEDModule` | ERC reports the two power pins as undriven. It is a passive fan-out with no source of its own; a `PWR_FLAG` on each input pin silences it |
+| `PSU` | Still in KiCad 9 format; the four boards below it are in KiCad 8. Opening and saving each in KiCad 10 migrates them |
 
 ## Gotchas
 

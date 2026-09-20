@@ -106,7 +106,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "220"
 			(at 0 1.82 90)
 			(layer "F.Fab")
 			(uuid "a0e3716c-92d4-4905-a8fc-74e641abd414")
@@ -864,7 +864,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "91"
 			(at 0 1.82 -90)
 			(layer "F.Fab")
 			(uuid "0ed10960-ccdb-472f-b9fd-0f01562b1203")

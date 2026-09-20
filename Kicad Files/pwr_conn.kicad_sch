@@ -5825,7 +5825,6 @@
 			)
 		)
 	)
-
 	(symbol
 		(lib_id "Device:C")
 		(at 168.91 81.28 90)

@@ -3828,7 +3828,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
 			(at 233.68 39.37 0)
 			(hide yes)
 			(show_name no)
@@ -3853,10 +3853,6 @@
 		)
 		(instances
 			(project "FCU_Mainboard_v3"
-				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3"
-					(reference "J4")
-					(unit 1)
-				)
 				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/2b9074b0-e40a-48cb-9151-bb1110abab34"
 					(reference "J14")
 					(unit 1)
@@ -4159,7 +4155,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
 			(at 205.74 39.37 0)
 			(hide yes)
 			(show_name no)
@@ -4184,10 +4180,6 @@
 		)
 		(instances
 			(project "FCU_Mainboard_v3"
-				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3"
-					(reference "J2")
-					(unit 1)
-				)
 				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/2b9074b0-e40a-48cb-9151-bb1110abab34"
 					(reference "J4")
 					(unit 1)
@@ -5758,7 +5750,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
 			(at 179.07 39.37 0)
 			(hide yes)
 			(show_name no)
@@ -5783,10 +5775,6 @@
 		)
 		(instances
 			(project "FCU_Mainboard_v3"
-				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3"
-					(reference "J15")
-					(unit 1)
-				)
 				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/2b9074b0-e40a-48cb-9151-bb1110abab34"
 					(reference "J2")
 					(unit 1)
@@ -6165,7 +6153,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
 			(at 247.65 39.37 0)
 			(hide yes)
 			(show_name no)
@@ -6190,10 +6178,6 @@
 		)
 		(instances
 			(project "FCU_Mainboard_v3"
-				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3"
-					(reference "J5")
-					(unit 1)
-				)
 				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/2b9074b0-e40a-48cb-9151-bb1110abab34"
 					(reference "J15")
 					(unit 1)
@@ -6334,7 +6318,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
 			(at 193.04 39.37 0)
 			(hide yes)
 			(show_name no)
@@ -6359,10 +6343,6 @@
 		)
 		(instances
 			(project "FCU_Mainboard_v3"
-				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3"
-					(reference "J1")
-					(unit 1)
-				)
 				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/2b9074b0-e40a-48cb-9151-bb1110abab34"
 					(reference "J3")
 					(unit 1)
@@ -6424,7 +6404,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
 			(at 219.71 39.37 0)
 			(hide yes)
 			(show_name no)
@@ -6449,10 +6429,6 @@
 		)
 		(instances
 			(project "FCU_Mainboard_v3"
-				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3"
-					(reference "J3")
-					(unit 1)
-				)
 				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/2b9074b0-e40a-48cb-9151-bb1110abab34"
 					(reference "J5")
 					(unit 1)
@@ -8044,7 +8020,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
 			(at 165.1 39.37 0)
 			(hide yes)
 			(show_name no)
@@ -8069,10 +8045,6 @@
 		)
 		(instances
 			(project "FCU_Mainboard_v3"
-				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3"
-					(reference "J14")
-					(unit 1)
-				)
 				(path "/3267b3f3-6c63-480a-8354-1757ed0a4fd3/2b9074b0-e40a-48cb-9151-bb1110abab34"
 					(reference "J1")
 					(unit 1)

@@ -935,7 +935,7 @@
 				)
 			)
 		)
-		(symbol "power:+9V"
+		(symbol "power:+5V"
 			(power)
 			(pin_names
 				(offset 0)
@@ -952,7 +952,7 @@
 					(hide yes)
 				)
 			)
-			(property "Value" "+9V"
+			(property "Value" "+5V"
 				(at 0 3.556 0)
 				(effects
 					(font
@@ -978,7 +978,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Power symbol creates a global label with name \"+9V\""
+			(property "Description" "Power symbol creates a global label with name \"+5V\""
 				(at 0 0 0)
 				(effects
 					(font
@@ -996,7 +996,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "+9V_0_1"
+			(symbol "+5V_0_1"
 				(polyline
 					(pts
 						(xy -0.762 1.27) (xy 0 2.54)
@@ -1034,11 +1034,11 @@
 					)
 				)
 			)
-			(symbol "+9V_1_1"
+			(symbol "+5V_1_1"
 				(pin power_in line
 					(at 0 0 90)
 					(length 0) hide
-					(name "+9V"
+					(name "+5V"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2219,7 +2219,7 @@
 		(uuid "2e9d8063-7474-40e5-9ef2-d11f7687649f")
 	)
 	(symbol
-		(lib_id "power:+9V")
+		(lib_id "power:+5V")
 		(at 77.47 124.46 180)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2236,7 +2236,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+9V"
+		(property "Value" "+5V"
 			(at 77.47 131.572 90)
 			(effects
 				(font
@@ -2828,7 +2828,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+9V")
+		(lib_id "power:+5V")
 		(at 46.99 124.46 180)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2845,7 +2845,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+9V"
+		(property "Value" "+5V"
 			(at 46.99 131.572 90)
 			(effects
 				(font
@@ -3086,7 +3086,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+9V")
+		(lib_id "power:+5V")
 		(at 62.23 143.51 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3103,7 +3103,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+9V"
+		(property "Value" "+5V"
 			(at 55.118 143.51 90)
 			(effects
 				(font

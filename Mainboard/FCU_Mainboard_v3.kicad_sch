@@ -6465,7 +6465,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "efis_right.kicad_sch"
+		(property "Sheetfile" "efis_left.kicad_sch"
 			(at 612.14 432.3846 0)
 			(show_name yes)
 			(do_not_autoplace no)
@@ -6603,7 +6603,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "efis_left.kicad_sch"
+		(property "Sheetfile" "efis_right.kicad_sch"
 			(at 331.47 433.6546 0)
 			(show_name yes)
 			(do_not_autoplace no)

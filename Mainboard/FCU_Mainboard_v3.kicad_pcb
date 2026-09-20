@@ -201,7 +201,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/df25eb65-a56b-4ba5-abe7-882e5923cc38")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -825,7 +825,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/b94c6ee2-528a-45cf-a8ce-a129aaf0f754")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -1499,7 +1499,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/00b9385a-8068-4557-be93-4020c6ef8179")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -1661,7 +1661,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/7bf10440-422c-440c-bb91-38e3488d557b/d84b84ca-07ef-4cd3-9f2c-92424a7b3e70")
 		(sheetname "/EFIS_RIGHT/")
-		(sheetfile "efis_left.kicad_sch")
+		(sheetfile "efis_right.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -2075,7 +2075,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/d6003185-f9c5-4698-889c-ee0e477f3a1c")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -2738,7 +2738,7 @@
 		(property ki_fp_filters "MountingHole*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/e894e043-8fd7-4d21-82fe-6c7c9077718e")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -3118,7 +3118,7 @@
 		(property ki_fp_filters "MountingHole*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/05f1fa5f-825f-43e5-a146-70d45826317e")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -3253,7 +3253,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/7775ae44-aa29-4b9e-aecb-07cdabcffc26")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -4035,7 +4035,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/7bf10440-422c-440c-bb91-38e3488d557b/87b8d350-ce05-4c10-a7ff-7d3134bbc54b")
 		(sheetname "/EFIS_RIGHT/")
-		(sheetfile "efis_left.kicad_sch")
+		(sheetfile "efis_right.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -4698,7 +4698,7 @@
 		(property ki_fp_filters "MountingHole*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/cebe449e-8e9f-479e-bf65-5c14e1b82403")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -6098,7 +6098,7 @@
 		(property ki_fp_filters "SOIC*W*7.5x15.4mm*P1.27mm*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/030624a8-d426-4ae4-8904-f45dd83e25bf")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -6646,7 +6646,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/686985a5-cebe-41ee-b162-ef5604adfbb2")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -6808,7 +6808,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/7bf10440-422c-440c-bb91-38e3488d557b/dad9e0c8-1870-4c44-af1d-65d705b144a9")
 		(sheetname "/EFIS_RIGHT/")
-		(sheetfile "efis_left.kicad_sch")
+		(sheetfile "efis_right.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -7108,7 +7108,7 @@
 		(property ki_fp_filters "MountingHole*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/bae3ecd7-666b-4c9e-82ac-6fce95fa870d")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -7405,7 +7405,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/1c5f4afc-2c01-43d0-84d8-9c993d3e5c58")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -8447,7 +8447,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/f316390a-ce80-4cdc-9c5e-ee3651facd7f")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -9121,7 +9121,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/8debc159-7f43-4370-8a8f-88570418860c")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -9366,7 +9366,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/7bf10440-422c-440c-bb91-38e3488d557b/a592c69c-e802-462b-8cb2-e542e4d0fc26")
 		(sheetname "/EFIS_RIGHT/")
-		(sheetfile "efis_left.kicad_sch")
+		(sheetfile "efis_right.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -11449,7 +11449,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/7bf10440-422c-440c-bb91-38e3488d557b/fa571091-c70b-4eb5-8017-64b8d4980fea")
 		(sheetname "/EFIS_RIGHT/")
-		(sheetfile "efis_left.kicad_sch")
+		(sheetfile "efis_right.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -11611,7 +11611,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/7bf10440-422c-440c-bb91-38e3488d557b/edb3968d-9e46-4c31-a055-cd733b3c461b")
 		(sheetname "/EFIS_RIGHT/")
-		(sheetfile "efis_left.kicad_sch")
+		(sheetfile "efis_right.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -11867,7 +11867,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/7bf10440-422c-440c-bb91-38e3488d557b/cce8891d-8e0f-4c77-b4cf-d58f15bf12ba")
 		(sheetname "/EFIS_RIGHT/")
-		(sheetfile "efis_left.kicad_sch")
+		(sheetfile "efis_right.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -13443,7 +13443,7 @@
 		(property ki_fp_filters "MountingHole*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/198b0d16-1073-4bfe-98b7-5d14b27d7d9d")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -13740,7 +13740,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/7bf10440-422c-440c-bb91-38e3488d557b/13977528-c24e-4e90-9424-bcd0ee5568d4")
 		(sheetname "/EFIS_RIGHT/")
-		(sheetfile "efis_left.kicad_sch")
+		(sheetfile "efis_right.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -13996,7 +13996,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/7bf10440-422c-440c-bb91-38e3488d557b/9e103a0c-5b55-4007-9b2d-5351fdf676c6")
 		(sheetname "/EFIS_RIGHT/")
-		(sheetfile "efis_left.kicad_sch")
+		(sheetfile "efis_right.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -14576,7 +14576,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/445f5675-85a1-4bee-9180-79e4b79fec7c")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -15164,7 +15164,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/7bf10440-422c-440c-bb91-38e3488d557b/a1baec1c-f801-4775-bf4b-56c3c82064db")
 		(sheetname "/EFIS_RIGHT/")
-		(sheetfile "efis_left.kicad_sch")
+		(sheetfile "efis_right.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -15453,7 +15453,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/7bf10440-422c-440c-bb91-38e3488d557b/ffdf6c56-eac4-4060-a42c-ab170fe9d390")
 		(sheetname "/EFIS_RIGHT/")
-		(sheetfile "efis_left.kicad_sch")
+		(sheetfile "efis_right.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -15709,7 +15709,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/7bf10440-422c-440c-bb91-38e3488d557b/52ab4a3c-5eee-401a-8fef-0d7817abed93")
 		(sheetname "/EFIS_RIGHT/")
-		(sheetfile "efis_left.kicad_sch")
+		(sheetfile "efis_right.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -16199,7 +16199,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/f15e713a-76ee-43e3-99da-f76190a6e78b")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -16455,7 +16455,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/7bf10440-422c-440c-bb91-38e3488d557b/8a4aba6e-4306-4676-b4b0-220987f19751")
 		(sheetname "/EFIS_RIGHT/")
-		(sheetfile "efis_left.kicad_sch")
+		(sheetfile "efis_right.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -17355,7 +17355,7 @@
 		(property ki_fp_filters "MountingHole*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/b9fbc1a4-3983-4780-9251-2bdef16511a1")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -17976,7 +17976,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/dfe6c56e-734c-4c5b-9e5f-57975717c5cb")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -18823,7 +18823,7 @@
 		(property ki_fp_filters "SOIC*W*7.5x15.4mm*P1.27mm*")
 		(path "/7bf10440-422c-440c-bb91-38e3488d557b/dbf994db-c3e8-4e34-b456-d60ec6aa67cc")
 		(sheetname "/EFIS_RIGHT/")
-		(sheetfile "efis_left.kicad_sch")
+		(sheetfile "efis_right.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -19371,7 +19371,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/7bf10440-422c-440c-bb91-38e3488d557b/bccfbb13-fe42-4791-ace8-85096dc60791")
 		(sheetname "/EFIS_RIGHT/")
-		(sheetfile "efis_left.kicad_sch")
+		(sheetfile "efis_right.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -19627,7 +19627,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/7bf10440-422c-440c-bb91-38e3488d557b/ff559a80-3bf9-47ab-b341-eeff54dff34d")
 		(sheetname "/EFIS_RIGHT/")
-		(sheetfile "efis_left.kicad_sch")
+		(sheetfile "efis_right.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -20034,7 +20034,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/7bf10440-422c-440c-bb91-38e3488d557b/0092b155-a894-4f42-b218-57a08fdae169")
 		(sheetname "/EFIS_RIGHT/")
-		(sheetfile "efis_left.kicad_sch")
+		(sheetfile "efis_right.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -20358,7 +20358,7 @@
 		(property ki_fp_filters "SOIC*W*7.5x15.4mm*P1.27mm*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/092eeccb-452d-4aaa-a72d-b97f9f9198cc")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -22057,7 +22057,7 @@
 		(property ki_fp_filters "SOIC*W*7.5x15.4mm*P1.27mm*")
 		(path "/7bf10440-422c-440c-bb91-38e3488d557b/68cb0d67-9d40-4618-bf08-5d02af2b3d9c")
 		(sheetname "/EFIS_RIGHT/")
-		(sheetfile "efis_left.kicad_sch")
+		(sheetfile "efis_right.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -22605,7 +22605,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/88f5e9e2-e8a0-4796-a1cf-4ee04136a055")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -23654,7 +23654,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/37ec9eca-58c3-40f8-83d6-a9bf9a2fea23")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -24072,7 +24072,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/ef43f6f1-980a-4e4d-8137-cd3c1d7d0298")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -25488,7 +25488,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/7bf10440-422c-440c-bb91-38e3488d557b/77ef3f92-ccbb-4790-bd9d-f9afc310a244")
 		(sheetname "/EFIS_RIGHT/")
-		(sheetfile "efis_left.kicad_sch")
+		(sheetfile "efis_right.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -26698,7 +26698,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/894f5b18-4608-4ac7-81e8-6b948ed0b554")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -27383,7 +27383,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/8cd2d1c1-4ad0-4e1a-935d-dd0d9f798e56")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -27884,7 +27884,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/7bf10440-422c-440c-bb91-38e3488d557b/7aa8b666-a9ac-411f-aa50-59d9176159b1")
 		(sheetname "/EFIS_RIGHT/")
-		(sheetfile "efis_left.kicad_sch")
+		(sheetfile "efis_right.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -29493,7 +29493,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/8c22dff1-8837-408c-bea0-86e0cc6f1d90")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -29749,7 +29749,7 @@
 		(property ki_fp_filters "MountingHole*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/3c11b7f1-8742-41c9-9a7b-ff2e9f6b948a")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -32876,7 +32876,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/26c832f0-2551-420d-89a1-4abe43d77e74/29b15d0f-6bdc-4a8c-b044-914368d0fa2c")
 		(sheetname "/EFIS_LEFT/")
-		(sheetfile "efis_right.kicad_sch")
+		(sheetfile "efis_left.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -33550,7 +33550,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/7bf10440-422c-440c-bb91-38e3488d557b/700a4a82-9d55-41a8-ac51-918ab3af9106")
 		(sheetname "/EFIS_RIGHT/")
-		(sheetfile "efis_left.kicad_sch")
+		(sheetfile "efis_right.kicad_sch")
 		(units
 			(unit
 				(name "A")

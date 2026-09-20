@@ -70,7 +70,7 @@ mains adapter.
 
 | LEDModule `J1`/`J2` | Korry `J2` | Signal |
 |---|---|---|
-| even pin | pin 1 | +5 V (see the naming note below) |
+| even pin | pin 1 | +5 V |
 | odd pin | pin 2 | switched return, through the 91 Ω on the Korry board |
 
 The same mirroring applies here.
@@ -113,8 +113,11 @@ is the PSU board's own 1 A input polyfuse, not the adapter.
 | `PSU` | `C1` 100 µF and `C2` 220 µF are on 1206 footprints. Those values are implausible as ceramics, and an LM2596 wants some ESR on its output for loop stability. Check what is actually fitted |
 | `PSU` | The 1 A input polyfuse caps the board at about a third of what the adapter can deliver |
 | `Korry_*` | `RG` and `RW` have no value assigned in the schematics. Fitted parts are 220 Ω (green) and 91 Ω (white) |
-| all backlight boards | Nets are named `+9V` but carry 5 V. At 9 V the white LEDs would draw 65 mA against a ~20 mA rating |
-| `Mainboard` | Sheets `EFIS_LEFT` and `EFIS_RIGHT` point at files whose names are swapped. The result is correct; the filenames mislead |
+| `Backlighting_Dimmer` | The footprint value fields on the board hold the reference (`C1`, `C2`, …) instead of the schematic value (470 nF, 10 nF, …). A BOM taken from the board is wrong until `Update PCB from Schematic` is run |
+| `Backlighting_Dimmer` | The screw terminal footprint `TerminalBlock:TerminalBlock_bornier-2_P5.08mm` no longer exists in the KiCad library. The copy embedded in the board is fine; only the link is broken |
+| `Korry_Large` | Four texts on the back silkscreen are not mirrored, so they read reversed on the finished board |
+| `Backlighting_LEDModule` | ERC reports the power pins as undriven. It is a passive fan-out with no source of its own, so this is expected |
+| all but `Mainboard` | Still saved in KiCad 9 format. Opening and saving them in KiCad 10 migrates them |
 
 ## Gotchas
 

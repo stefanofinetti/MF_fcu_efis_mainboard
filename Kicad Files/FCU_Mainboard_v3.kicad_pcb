@@ -22355,7 +22355,7 @@
 				)
 			)
 		)
-		(property "Value" "USB_C_Plug_USB2.0"
+		(property "Value" "USB_B"
 			(at 6.76 10.27 90)
 			(layer "F.Fab")
 			(uuid "6ea33481-3fb4-4c92-81c9-e5f02280d7d9")
@@ -41622,7 +41622,7 @@
 	(segment
 		(start 78.5042 70.85)
 		(end 78.5042 70.9)
-		(width 0.601)
+		(width 1)
 		(layer "F.Cu")
 		(net 18)
 		(uuid "d7e47db4-5b60-4be6-8255-60a172c369a6")

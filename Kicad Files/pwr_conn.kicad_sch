@@ -4021,7 +4021,7 @@
 				)
 			)
 		)
-		(property "Value" "USB_C_Plug_USB2.0"
+		(property "Value" "USB_B"
 			(at 26.67 72.39 0)
 			(effects
 				(font

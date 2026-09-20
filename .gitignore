@@ -1,0 +1,3 @@
+# SketchUp auto-backups: a near-copy of the .skp from the previous save.
+# Binary, so git stores a whole new blob every time one is touched.
+*.skb

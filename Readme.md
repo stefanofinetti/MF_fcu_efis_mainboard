@@ -24,7 +24,7 @@ the PC over USB, so it can be unplugged and moved.
 | Folder | Project | Qty | Role |
 |---|---|---|---|
 | `Mainboard/` | `FCU_Mainboard_v3` | 1 | ATmega2560 + CH340G, 7 OLEDs behind a PCA9548A I²C mux, 4× CD74HC4067 analogue mux for the buttons, 20 annunciator outputs. 250 × 100 mm, 2 layers |
-| `PSU/` | `9V_Distribution` | 1 | 9 V in → LM2596S-5 → 5 V out on three screw terminals |
+| `PSU/` | `9V_Distribution` | 1 | 9 V in → LM2596S-5 buck → 5 V out on three screw terminals. Revised: see *PSU revision* below |
 | `Backlighting_Dimmer/` | `Backlighting_PCB` | 1 | NE555 PWM dimmer, potentiometer controlled, IRLIZ44N low-side switch, three outputs |
 | `Backlighting_LEDModule/` | `Backlighting_LEDModule_PCB` | 3 | Passive fan-out: one input → twenty 2-pin outputs. Three of them only to keep the LED strip wiring short |
 | `Korry_Large/` | `KorryLargePCB_SMD` | — | Tactile switch + green annunciator LED + white backlight LED |
@@ -35,7 +35,9 @@ the PC over USB, so it can be unplugged and moved.
 ```
  mains adapter 9 V / 3 A
         │
-        └──► PSU  J1 ──► D2 ──► D1 ──► LM2596S-5 ──► L1 ──► 5 V ──┬──► J2 ──┐
+        └──► PSU  J1 ──► D1 ──► F2 ──► LM2596S-5 ──► L1 ──► 5 V ──┬──► J2 ──┐
+                              (2 A)    │  D2 ◄──┘          │           │
+                                       └─ catch     C2 ‖ C4 ─────┤
                                                                    ├──► J3 ──┤  three taps,
                                                                    └──► J4 ──┘  same node
                                                                                     │
@@ -105,13 +107,34 @@ Calculated where the resistors are known, estimated elsewhere.
 The adapter supplies 27 W and the unit uses under 7 W. The binding constraint
 is the PSU board's own 1 A input polyfuse, not the adapter.
 
+## PSU revision
+
+The 9 V distribution board was reworked. The schematic and layout in this
+repository are the revised version; the board physically in the glareshield is
+still the old one.
+
+| Change | Why |
+|---|---|
+| **`D2` added** — SS54 Schottky, cathode on the switch node, anode to ground | A non-synchronous buck has nowhere for the inductor current to go when the switch opens. Without an external diode it freewheels through the substrate diode of the LM2596 itself: roughly 0.4 W of extra dissipation inside the package on top of its own 0.7 W, and substrate injection the part is not specified for. This is why the board works and why it degrades |
+| **`C4` added** — 220 µF radial electrolytic in parallel with `C2` | The LM2596 control loop needs some ESR on the output. `C2` is a ceramic, which has almost none. The RMP V5, same family of design but with electrolytics at its regulator, has never misbehaved |
+| **`F2` 1 A → 2 A** (`MF-RHT100` → `MF-RHT200`) | At 1.14 A out the input draws about 0.75 A. Derated for the temperature inside a printed case, a 1 A polyfuse holds under 0.8 A — too close to nuisance tripping. Pads are identical, so the swap costs nothing in layout |
+| **Power section re-laid out** | `U4` pin 2, the cathode of `D2` and pin 1 of `L1` now sit on one straight line at y = 64.95, and `C1` sits 4 mm under the VIN pin. The commutation loop went from *nonexistent* to about 4 mm of forward track each side |
+
+Every track is on the front. **The bottom layer is an uninterrupted ground
+plane**, so the return current of each loop runs directly beneath its outward
+track and the enclosed area stays small. Stitching vias next to the ground
+terminals of `C1`, `C2`, `C4` and the anode of `D2` are tied to their pads by
+short tracks rather than through the thermal spokes.
+
+Not changed: the outline, the four mounting holes and the positions of `J1`
+to `J4`, so the board still drops into the same case with the same wiring.
+
 ## Known issues
 
 | Board | Issue |
 |---|---|
-| `PSU` | **The LM2596 has no catch diode.** A non-synchronous buck requires a Schottky from the switch node to ground; the only diode on the board is in series with the input. The part runs out of spec and the effect worsens with load |
-| `PSU` | `C1` 100 µF and `C2` 220 µF are on 1206 footprints. Those values are implausible as ceramics, and an LM2596 wants some ESR on its output for loop stability. Check what is actually fitted |
-| `PSU` | The 1 A input polyfuse caps the board at about a third of what the adapter can deliver |
+| `PSU` | **The board in service still has no catch diode.** The fix is in these files but not in the built hardware. Until the board is remade, fit a 3–5 A / 40 V Schottky on the back: cathode to `L1` pin 1, anode to the ground plane about 4 mm away, near the via at (129.0, 71.35) |
+| `PSU` | `C1` sits across the 9 V input. Its voltage rating needs to be 25 V: a 1206 MLCC of that capacitance is typically rated 6.3 V or 10 V, which is at or over the limit and loses most of its capacitance to DC bias long before that |
 | `Backlighting_Dimmer`, `Backlighting_LEDModule` | The screw terminal footprint `TerminalBlock:TerminalBlock_bornier-2_P5.08mm` no longer exists in the KiCad library. KiCad 10 ships no 2-pin 5.08 mm terminal block at all, so there is nothing to point it at: retargeting it would change the pad geometry of a board that is already made. The copy embedded in the board is correct and is what gets manufactured; only the library link dangles |
 | `Korry_Large` | Four `+` and `-` markers on the back silkscreen are not mirrored. Both glyphs are symmetric so nothing reads wrong, and since they are justified `left bottom`, adding the mirror flag would shift them by about a glyph width. Left alone on purpose |
 
@@ -136,6 +159,11 @@ board that is already made.
 
 ## Gotchas
 
+- **The `PSU` ground zone needs refilling.** The layout was edited outside
+  KiCad, so the stored fill is the one computed for the old component
+  positions. Open the board and press `B` before DRC or before generating
+  production files. Until you do, DRC reports about 56 clearance, hole and
+  solder-mask violations that are all the stale pour and nothing else.
 - **`F8` in Pcbnew clears `exclude_from_pos_files` on the seven mounting
   holes**, which puts them into the pick-and-place file. Re-check before
   generating production output.

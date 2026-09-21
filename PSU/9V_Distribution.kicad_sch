@@ -160,6 +160,183 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:C_Polarized"
+		(pin_numbers
+		(hide yes)
+		)
+		(pin_names
+		(offset 0.254)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "C"
+		(at 0.635 2.54 0)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		(justify left)
+		)
+		)
+		(property "Value" "C_Polarized"
+		(at 0.635 -2.54 0)
+		(show_name no)
+		(do_not_autoplace no)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		(justify left)
+		)
+		)
+		(property "Footprint" ""
+		(at 0.9652 -3.81 0)
+		(show_name no)
+		(do_not_autoplace no)
+		(hide yes)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		(property "Datasheet" ""
+		(at 0 0 0)
+		(show_name no)
+		(do_not_autoplace no)
+		(hide yes)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		(property "Description" "Polarized capacitor"
+		(at 0 0 0)
+		(show_name no)
+		(do_not_autoplace no)
+		(hide yes)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		(property "ki_keywords" "cap capacitor"
+		(at 0 0 0)
+		(show_name no)
+		(do_not_autoplace no)
+		(hide yes)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		(property "ki_fp_filters" "CP_*"
+		(at 0 0 0)
+		(show_name no)
+		(do_not_autoplace no)
+		(hide yes)
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		(symbol "C_Polarized_0_1"
+		(rectangle
+		(start -2.286 0.508)
+		(end 2.286 1.016)
+		(stroke
+		(width 0)
+		(type default)
+		)
+		(fill
+		(type none)
+		)
+		)
+		(polyline
+		(pts
+		(xy -1.778 2.286) (xy -0.762 2.286)
+		)
+		(stroke
+		(width 0)
+		(type default)
+		)
+		(fill
+		(type none)
+		)
+		)
+		(polyline
+		(pts
+		(xy -1.27 2.794) (xy -1.27 1.778)
+		)
+		(stroke
+		(width 0)
+		(type default)
+		)
+		(fill
+		(type none)
+		)
+		)
+		(rectangle
+		(start 2.286 -0.508)
+		(end -2.286 -1.016)
+		(stroke
+		(width 0)
+		(type default)
+		)
+		(fill
+		(type outline)
+		)
+		)
+		)
+		(symbol "C_Polarized_1_1"
+		(pin passive line
+		(at 0 3.81 270)
+		(length 2.794)
+		(name ""
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		(number "1"
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		)
+		(pin passive line
+		(at 0 -3.81 90)
+		(length 2.794)
+		(name ""
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		(number "2"
+		(effects
+		(font
+		(size 1.27 1.27)
+		)
+		)
+		)
+		)
+		)
+		(embedded_fonts no)
+		)
 		(symbol "Device:L"
 			(pin_numbers
 				(hide yes)
@@ -4323,7 +4500,7 @@
 				)
 			)
 		)
-		(property "Value" "Polyfuse"
+		(property "Value" "2A"
 			(at 87.63 72.39 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4333,7 +4510,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Fuse:Fuse_Bourns_MF-RHT100"
+		(property "Footprint" "Fuse:Fuse_Bourns_MF-RHT200"
 			(at 82.55 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -5018,6 +5195,380 @@
 				)
 			)
 		)
+	)
+	(symbol
+		(lib_id "PCM_Diode_Schottky_AKL:SS54")
+		(at 153.67 85.09 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "76737942-1589-49ae-9514-74f1a4c9504a")
+		(property "Reference" "D2"
+			(at 157.48 83.8199 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SS54"
+			(at 157.48 86.3599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "PCM_Diode_SMD_AKL:D_SMC"
+			(at 153.67 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.laro.com.pl/pdf/ss56.pdf"
+			(at 153.67 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "SMC Schottky diode, 40V, 5A, Alternate KiCAD Library"
+			(at 153.67 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8cd681cb-6618-4a4f-aba7-6aa61a768a98")
+		)
+		(pin "2"
+			(uuid "3e5aa87e-1f7e-42a8-99cb-df345d1d640e")
+		)
+		(instances
+			(project "9V_Distribution"
+				(path "/1a585869-3bcb-4fdd-b673-43a6eea405f6"
+					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 153.67 92.71 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5b30409f-ba9d-4da3-bb99-acbeee7495be")
+		(property "Reference" "#PWR032"
+			(at 153.67 99.05999999999999 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 153.67 100.32999999999998 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 153.67 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 153.67 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 153.67 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "077f30dc-2ea2-47c8-8f3c-368d15502b0d")
+		)
+		(instances
+			(project "9V_Distribution"
+				(path "/1a585869-3bcb-4fdd-b673-43a6eea405f6"
+					(reference "#PWR032")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 153.67 88.9) (xy 153.67 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab181e07-c05e-44a4-a215-cbdc7e36d63e")
+	)
+	(junction
+		(at 153.67 81.28)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "dd13abce-d7ce-4555-a9bc-33922d56f764")
+	)
+	(symbol
+		(lib_id "Device:C_Polarized")
+		(at 180.34 77.47 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "971aa190-28e9-4d19-b4dc-e8f94347cda8")
+		(property "Reference" "C4"
+			(at 184.15 76.1999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "220uF"
+			(at 184.15 78.7399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm"
+			(at 180.34 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 180.34 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Polarized capacitor"
+			(at 180.34 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "89622bbe-ad2c-45e5-925e-063eb2990fc5")
+		)
+		(pin "2"
+			(uuid "d6671703-500f-4ccc-96fc-cf8029d545e0")
+		)
+		(instances
+			(project "9V_Distribution"
+				(path "/1a585869-3bcb-4fdd-b673-43a6eea405f6"
+					(reference "C4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 180.34 68.58 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "77b64d17-a38a-44a5-88e5-5dad2c88be3e")
+		(property "Reference" "#PWR033"
+			(at 180.34 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 180.34 63.5 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 180.34 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 180.34 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 180.34 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a6d8db9b-58c9-4c53-b3c1-4f950accb373")
+		)
+		(instances
+			(project "9V_Distribution"
+				(path "/1a585869-3bcb-4fdd-b673-43a6eea405f6"
+					(reference "#PWR033")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 180.34 73.66) (xy 180.34 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1262d2aa-2bcc-4afd-aa46-83dfec413805")
+	)
+	(junction
+		(at 180.34 81.28)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "32ac8cf1-4f37-46ba-8cef-c4658554ede9")
+	)
+	(text "C1 e C2: 25V minimo. A 9V un MLCC da 6.3/10V perde quasi tutta la capacita per DC bias."
+		(exclude_from_sim no)
+		(at 96.52 101.6 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "91c6954f-07b1-4382-8fb8-e9b17609e21f")
+	)
+	(text "D2 e il diodo di ricircolo: senza, la corrente dell'induttanza torna dal substrato di U4."
+		(exclude_from_sim no)
+		(at 137.16 99.06 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "003d465c-8136-4ffa-a128-3dd08684e54c")
 	)
 	(sheet_instances
 		(path "/"

@@ -24,7 +24,7 @@ the PC over USB, so it can be unplugged and moved.
 | Folder | Project | Qty | Role |
 |---|---|---|---|
 | `Mainboard/` | `FCU_Mainboard_v3` | 1 | ATmega2560 + CH340G, 7 OLEDs behind a PCA9548A I²C mux, 4× CD74HC4067 analogue mux for the buttons, 20 annunciator outputs. 250 × 100 mm, 2 layers |
-| `PSU/` | `9V_Distribution` | 1 | 9 V in → LM2596S-5 buck → 5 V out on three screw terminals. Revised: see *PSU revision* below |
+| `PSU/` | `9V_Distribution` | 1 | 70 × 80 mm. Two independent regulators off one 9 V input: an LM2596S-5 buck for the backlighting and a P78A05-1000 for the mainboard. See *PSU revision* below |
 | `Backlighting_Dimmer/` | `Backlighting_PCB` | 1 | NE555 PWM dimmer, potentiometer controlled, IRLIZ44N low-side switch, three outputs |
 | `Backlighting_LEDModule/` | `Backlighting_LEDModule_PCB` | 3 | Passive fan-out: one input → twenty 2-pin outputs. Three of them only to keep the LED strip wiring short |
 | `Korry_Large/` | `KorryLargePCB_SMD` | — | Tactile switch + green annunciator LED + white backlight LED |
@@ -35,13 +35,14 @@ the PC over USB, so it can be unplugged and moved.
 ```
  mains adapter 9 V / 3 A
         │
-        └──► PSU  J1 ──► D1 ──► F2 ──► LM2596S-5 ──► L1 ──► 5 V ──┬──► J2 ──┐
-                              (2 A)    │  D2 ◄──┘          │           │
-                                       └─ catch     C2 ‖ C4 ─────┤
-                                                                   ├──► J3 ──┤  three taps,
-                                                                   └──► J4 ──┘  same node
-                                                                                    │
- PC ──USB──► Mainboard                                    Backlighting_Dimmer ◄──────┘
+        └──► PSU  J1 ──► D1 ──┬──► F2 ──► LM2596S-5 ──► L1 ──┬──► 5 V ──┬──► J2 ─┐
+                              │   (2 A)     D2 ◄──┘          │          ├──► J3 ─┤
+                              │             catch      C2 ‖ C4          └──► J4 ─┤
+                              │                                                  │
+                              └──► F3 ──► P78A05-1000 ──► J5 ──► Mainboard        │
+                                 (0.5 A)   C5‖C6  C7‖C8          (clean 5 V)      │
+                                                                                  │
+ PC ──USB──► Mainboard                                    Backlighting_Dimmer ◄───┘
    (powered USB3 hub)                                            │
         │                                                        └──► 3 × LEDModule
         └──► 20 × Korry  (green annunciator LED + button)                  │
@@ -49,9 +50,11 @@ the PC over USB, so it can be unplugged and moved.
                                  + 6 LED strip segments
 ```
 
-Two independent supplies that share only the PC ground through the USB shield.
-The mainboard runs off USB; everything that draws real current runs off the
-mains adapter.
+Two supply chains that share only ground. The backlighting, which draws the
+real current, runs off the mains adapter through the buck. The mainboard runs
+off USB today; `J5` is there for the automatic selector that will let it take
+the adapter instead whenever one is plugged in. That selector is not built
+yet — see *Known issues*.
 
 ## Interconnect
 
@@ -120,6 +123,23 @@ still the old one.
 | **`F2` 1 A → 2 A** (`MF-RHT100` → `MF-RHT200`) | At 1.14 A out the input draws about 0.75 A. Derated for the temperature inside a printed case, a 1 A polyfuse holds under 0.8 A — too close to nuisance tripping. Pads are identical, so the swap costs nothing in layout |
 | **Power section re-laid out** | `U4` pin 2, the cathode of `D2` and pin 1 of `L1` now sit on one straight line at y = 64.95, and `C1` sits 4 mm under the VIN pin. The commutation loop went from *nonexistent* to about 4 mm of forward track each side |
 
+### The mainboard branch
+
+The mainboard needs a 5 V source that does not depend on the USB hub. It does
+**not** take it from `J2`/`J3`/`J4`: those are one node with the backlighting
+on it, PWM-switched by the dimmer's IRLIZ44N in steps of up to 1.1 A. Putting
+the MCU and seven OLEDs on that rail would feed them those steps.
+
+Instead a second, independent regulator, tapped from D1's cathode: the reverse
+protection is shared, the fuse is not, so a fault on one branch cannot take
+down the other. `F3` is 0.5 A for the branch's ~215 mA at 9 V. `U1` is the same
+P78A05-1000 module used on RMP V5, with 100 nF + 100 uF each side as there.
+
+The board grew from 50 × 70 to **70 × 80 mm** to make room. The whole
+regulator chain lives in the new strip at x 150..170, so the buck section
+keeps its original placement and its original routing, and every track stays
+on the front: the bottom layer is an uninterrupted ground plane.
+
 Every track is on the front. **The bottom layer is an uninterrupted ground
 plane**, so the return current of each loop runs directly beneath its outward
 track and the enclosed area stays small. Stitching vias next to the ground
@@ -135,6 +155,7 @@ to `J4`, so the board still drops into the same case with the same wiring.
 |---|---|
 | `PSU` | **Boards made from an earlier revision have no catch diode.** If you already built one, do not run it as it is: either remake it from the current files, or fit a 3–5 A / 40 V Schottky on the back, cathode to `L1` pin 1 and anode to the ground plane about 4 mm away, near the via at (129.0, 71.35). Check continuity to `J1` pin 2 with a meter before soldering |
 | `PSU` | `C1` sits across the 9 V input. Its voltage rating needs to be 25 V: a 1206 MLCC of that capacitance is typically rated 6.3 V or 10 V, which is at or over the limit and loses most of its capacitance to DC bias long before that |
+| `Mainboard` | **The automatic supply selector is not built yet.** The PSU's `J5` produces a clean 5 V for it, but the mainboard still takes all its power from USB. The planned part is a TPS2115A power mux on the `+5V` net, with `D0` to ground and `D1` from a 100k/100k divider on the incoming rail, so the external supply is preferred whenever it is above about 4 V |
 | `Backlighting_Dimmer`, `Backlighting_LEDModule` | The screw terminal footprint `TerminalBlock:TerminalBlock_bornier-2_P5.08mm` no longer exists in the KiCad library. KiCad 10 ships no 2-pin 5.08 mm terminal block at all, so there is nothing to point it at: retargeting it would change the pad geometry of a board that is already made. The copy embedded in the board is correct and is what gets manufactured; only the library link dangles |
 | `Korry_Large` | Four `+` and `-` markers on the back silkscreen are not mirrored. Both glyphs are symmetric so nothing reads wrong, and since they are justified `left bottom`, adding the mirror flag would shift them by about a glyph width. Left alone on purpose |
 

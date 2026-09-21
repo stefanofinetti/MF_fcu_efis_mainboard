@@ -149,13 +149,41 @@ short tracks rather than through the thermal spokes.
 Not changed: the outline, the four mounting holes and the positions of `J1`
 to `J4`, so the board still drops into the same case with the same wiring.
 
+## Mainboard selector
+
+The schematic half is done. `U8` is a TPS2115A power mux: `IN1` takes the
+clean 5 V from the PSU's `J5`, `IN2` takes USB `VBUS`, and `OUT` becomes the
+board's `+5V`. `D0` is tied to ground and `D1` comes from a 100k/100k divider
+on the incoming rail, which makes the choice deterministic rather than
+"whichever input happens to be higher": the external supply wins whenever it
+is above about 4 V, and the board falls back to USB below that.
+
+The part has no body diodes across its switches, so nothing can flow back
+into the USB port when the board runs on the adapter. `ILIM` is set to about
+0.8 A by `R34`. `STAT` is left unconnected; it is an open-drain output that
+goes low on `IN1`, if an indicator is ever wanted.
+
+`P1` pin 1 and `R14`, the D+ pull-up, moved off `+5V` onto the new `VBUS`
+net. `JP1`, `VCC` and the ISP path are untouched: `JP1` still chooses whether
+`VIN` comes from the board rail or from the programmer.
+
+The symbol lives in `Mainboard/TPS2115A.kicad_sym` with a project-local
+`sym-lib-table`, so the repository is self-contained.
+
+**What is missing is the board.** Counting tracks as well as footprints, the
+mainboard has no free rectangle big enough for the cluster anywhere near the
+power section: the largest gaps are about 14 x 12 mm at the bottom-left
+corner and a 42 x 7 mm strip around x 38..80, y 110..117 — neither takes the
+screw terminal and the electrolytic. Fitting this needs either a wider board
+or a relayout of the bottom band.
+
 ## Known issues
 
 | Board | Issue |
 |---|---|
 | `PSU` | **Boards made from an earlier revision have no catch diode.** If you already built one, do not run it as it is: either remake it from the current files, or fit a 3–5 A / 40 V Schottky on the back, cathode to `L1` pin 1 and anode to the ground plane about 4 mm away, near the via at (129.0, 71.35). Check continuity to `J1` pin 2 with a meter before soldering |
 | `PSU` | `C1` sits across the 9 V input. Its voltage rating needs to be 25 V: a 1206 MLCC of that capacitance is typically rated 6.3 V or 10 V, which is at or over the limit and loses most of its capacitance to DC bias long before that |
-| `Mainboard` | **The automatic supply selector is not built yet.** The PSU's `J5` produces a clean 5 V for it, but the mainboard still takes all its power from USB. The planned part is a TPS2115A power mux on the `+5V` net, with `D0` to ground and `D1` from a 100k/100k divider on the incoming rail, so the external supply is preferred whenever it is above about 4 V |
+| `Mainboard` | **The automatic supply selector is on the schematic but not on the board.** `U8` (TPS2115A), `J13`, `C25`–`C27` and `R32`–`R34` exist in `pwr_conn.kicad_sch` and ERC passes, but the PCB does not carry them yet, so schematic parity reports eight missing footprints. The board has no contiguous free area left for them near the power section — see *Mainboard selector* below |
 | `Backlighting_Dimmer`, `Backlighting_LEDModule` | The screw terminal footprint `TerminalBlock:TerminalBlock_bornier-2_P5.08mm` no longer exists in the KiCad library. KiCad 10 ships no 2-pin 5.08 mm terminal block at all, so there is nothing to point it at: retargeting it would change the pad geometry of a board that is already made. The copy embedded in the board is correct and is what gets manufactured; only the library link dangles |
 | `Korry_Large` | Four `+` and `-` markers on the back silkscreen are not mirrored. Both glyphs are symmetric so nothing reads wrong, and since they are justified `left bottom`, adding the mirror flag would shift them by about a glyph width. Left alone on purpose |
 

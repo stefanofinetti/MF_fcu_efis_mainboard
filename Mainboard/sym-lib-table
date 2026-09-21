@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "TPS2115A")(type "KiCad")(uri "${KIPRJMOD}/TPS2115A.kicad_sym")(options "")(descr "Power mux for the automatic supply selector. Local to the project so the repository is self-contained."))
+)

@@ -23,7 +23,7 @@ the PC over USB, so it can be unplugged and moved.
 
 | Folder | Project | Qty | Role |
 |---|---|---|---|
-| `Mainboard/` | `FCU_Mainboard_v3` | 1 | ATmega2560 + CH340G, 7 OLEDs behind a PCA9548A I²C mux, 4× CD74HC4067 analogue mux for the buttons, 20 annunciator outputs. 250 × 100 mm, 2 layers |
+| `Mainboard/` | `FCU_Mainboard_v3` | 1 | ATmega2560 + CH340G, 7 OLEDs behind a PCA9548A I²C mux, 4× CD74HC4067 analogue mux for the buttons, 20 annunciator outputs, TPS2115A supply selector. 270 × 100 mm, 2 layers |
 | `PSU/` | `9V_Distribution` | 1 | 70 × 80 mm. Two independent regulators off one 9 V input: an LM2596S-5 buck for the backlighting and a P78A05-1000 for the mainboard. See *PSU revision* below |
 | `Backlighting_Dimmer/` | `Backlighting_PCB` | 1 | NE555 PWM dimmer, potentiometer controlled, IRLIZ44N low-side switch, three outputs |
 | `Backlighting_LEDModule/` | `Backlighting_LEDModule_PCB` | 3 | Passive fan-out: one input → twenty 2-pin outputs. Three of them only to keep the LED strip wiring short |
@@ -170,12 +170,22 @@ net. `JP1`, `VCC` and the ISP path are untouched: `JP1` still chooses whether
 The symbol lives in `Mainboard/TPS2115A.kicad_sym` with a project-local
 `sym-lib-table`, so the repository is self-contained.
 
-**What is missing is the board.** Counting tracks as well as footprints, the
-mainboard has no free rectangle big enough for the cluster anywhere near the
-power section: the largest gaps are about 14 x 12 mm at the bottom-left
-corner and a 42 x 7 mm strip around x 38..80, y 110..117 — neither takes the
-screw terminal and the electrolytic. Fitting this needs either a wider board
-or a relayout of the bottom band.
+Counting tracks as well as footprints, the old 250 mm board had no free
+rectangle big enough for the cluster anywhere near the power section, so the
+board grew to **270 x 100 mm**: it gains 20 mm on the right and nothing that
+already existed moves, apart from the two right-hand mounting holes, which go
+from x 265 to x 285. The other five stay put. The 100 mm depth is untouched.
+
+The whole selector sits in that new strip, in a column from `J13` at the top
+down through `U8`, `C27` and the divider.
+
+**The new connections are not routed yet.** DRC reports 20 unconnected items
+on `VBUS`, `5V_EXT`, `SEL`, `Net-(U8-ILIM)`, `+5V` and `GND`; the GND ones
+resolve on the first zone refill, the rest need routing. Cutting `P1` pin 1
+out of `+5V` also split that net into two islands that both now hang off
+`U8` pin 7, and it left the 60 mm spine at y 105.72 dangling at its west end.
+Schematic parity is clean, so the ratlines are correct and the board is ready
+for the autorouter.
 
 ## Known issues
 

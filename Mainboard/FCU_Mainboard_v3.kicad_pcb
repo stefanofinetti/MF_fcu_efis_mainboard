@@ -45524,7 +45524,7 @@
 	(segment
 		(start 279.8625 55.675)
 		(end 283.5 55.675)
-		(width 0.3)
+		(width 0.4)
 		(layer "F.Cu")
 		(net "+5V")
 		(uuid "6de7a1fe-df29-4880-ada4-f8b6c7e0b506")
@@ -45635,11 +45635,19 @@
 	)
 	(segment
 		(start 283.5 55.675)
-		(end 283.5 69.5)
-		(width 0.3)
+		(end 283.5 56.6)
+		(width 0.4)
 		(layer "F.Cu")
 		(net "+5V")
 		(uuid "a2d34281-2b7d-4e28-aafb-0b06d6cc53db")
+	)
+	(segment
+		(start 283.5 56.6)
+		(end 283.5 69.5)
+		(width 1)
+		(layer "F.Cu")
+		(net "+5V")
+		(uuid "fe58536a-8db5-4870-99ad-03dab19222fa")
 	)
 	(segment
 		(start 115.9517 111.9483)
@@ -45692,7 +45700,7 @@
 	(segment
 		(start 283.5 69.5)
 		(end 282 71)
-		(width 0.3)
+		(width 1)
 		(layer "F.Cu")
 		(net "+5V")
 		(uuid "bd9bfed8-c68e-45a9-9d0f-f9953d62dacd")
@@ -46676,7 +46684,7 @@
 	(segment
 		(start 273.4375 59)
 		(end 273.4375 63)
-		(width 0.3)
+		(width 1)
 		(layer "F.Cu")
 		(net "/Power Connectors/VBUS")
 		(uuid "6d6a3c32-1412-41ea-980f-5f507a79c158")
@@ -46684,7 +46692,7 @@
 	(segment
 		(start 282 59)
 		(end 273.4375 59)
-		(width 0.3)
+		(width 1)
 		(layer "F.Cu")
 		(net "/Power Connectors/VBUS")
 		(uuid "755158e5-f792-4a6a-89d3-558a8c94c65c")
@@ -46708,7 +46716,7 @@
 	(segment
 		(start 282 56.325)
 		(end 282 59)
-		(width 0.3)
+		(width 0.4)
 		(layer "F.Cu")
 		(net "/Power Connectors/VBUS")
 		(uuid "96941af5-b3cf-41e0-b96e-d13475525bdf")
@@ -47422,7 +47430,7 @@
 	(segment
 		(start 278 35)
 		(end 285.5 42.5)
-		(width 0.3)
+		(width 1)
 		(layer "F.Cu")
 		(net "/Power Connectors/5V_EXT")
 		(uuid "1ebc824f-4d45-43b7-b37e-8cbb73ece5b1")
@@ -47430,7 +47438,7 @@
 	(segment
 		(start 285.5 48)
 		(end 277 48)
-		(width 0.3)
+		(width 1)
 		(layer "F.Cu")
 		(net "/Power Connectors/5V_EXT")
 		(uuid "37ccb28d-821a-406f-bcf5-d582762dd110")
@@ -47446,18 +47454,34 @@
 	(segment
 		(start 279.8625 55.025)
 		(end 285.5 55.025)
-		(width 0.3)
+		(width 0.4)
 		(layer "F.Cu")
 		(net "/Power Connectors/5V_EXT")
 		(uuid "79ea6507-df5c-41d4-a3ea-0318a135f75b")
 	)
 	(segment
 		(start 285.5 42.5)
+		(end 285.5 54)
+		(width 1)
+		(layer "F.Cu")
+		(net "/Power Connectors/5V_EXT")
+		(uuid "b7d68d43-8ca9-40f9-987a-c427c8ec95d8")
+	)
+	(segment
+		(start 285.5 54)
+		(end 285.5 55.025)
+		(width 0.4)
+		(layer "F.Cu")
+		(net "/Power Connectors/5V_EXT")
+		(uuid "fbcccad8-7338-4d78-9aa2-20a71988c4b6")
+	)
+	(segment
+		(start 285.5 55.025)
 		(end 285.5 84)
 		(width 0.3)
 		(layer "F.Cu")
 		(net "/Power Connectors/5V_EXT")
-		(uuid "b7d68d43-8ca9-40f9-987a-c427c8ec95d8")
+		(uuid "dca94575-ce83-43f2-8447-c136514653a2")
 	)
 	(segment
 		(start 270.5 59.225)

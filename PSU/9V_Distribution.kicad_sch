@@ -5597,28 +5597,6 @@
 		(color 0 0 0 0)
 		(uuid "32ac8cf1-4f37-46ba-8cef-c4658554ede9")
 	)
-	(text "C1 e C2: 25V minimo. A 9V un MLCC da 6.3/10V perde quasi tutta la capacita per DC bias."
-		(exclude_from_sim no)
-		(at 96.52 101.6 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "91c6954f-07b1-4382-8fb8-e9b17609e21f")
-	)
-	(text "D2 e il diodo di ricircolo: senza, la corrente dell'induttanza torna dal substrato di U4."
-		(exclude_from_sim no)
-		(at 137.16 99.06 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "003d465c-8136-4ffa-a128-3dd08684e54c")
-	)
 	(symbol
 		(lib_id "Device:Polyfuse")
 		(at 80.01 110.49 90)
@@ -6799,6 +6777,50 @@
 			(justify left bottom)
 		)
 		(uuid "1863afb6-c07a-45e6-b9cf-adcb9b4ac48e")
+	)
+	(text "Due rami indipendenti dai 9V: F2 + U4 per la retroilluminazione, F3 + U1 per la mainboard."
+		(exclude_from_sim no)
+		(at 31.75 137.16 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "96a615a0-cff6-40b7-98bb-168da9fa2e44")
+	)
+	(text "Protezione d'inversione (D1) in comune, fusibili separati: un guasto su un ramo non spegne l'altro."
+		(exclude_from_sim no)
+		(at 31.75 142.24 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "936e2fbb-8f85-4f9d-9e6d-0f1971567cdf")
+	)
+	(text "D2 e' il diodo di ricircolo. Senza, la corrente dell'induttanza tornerebbe dal substrato di U4."
+		(exclude_from_sim no)
+		(at 31.75 147.32 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "675f6ff8-19b4-40a1-910f-32518e795006")
+	)
+	(text "C1 lavora sui 9V: serve almeno 25V di tenuta. Un MLCC da 6.3 o 10V a quella tensione perde quasi tutta la capacita."
+		(exclude_from_sim no)
+		(at 31.75 152.4 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a4931698-bbd8-46e4-bcc8-9c287c784f6d")
 	)
 	(sheet_instances
 		(path "/"

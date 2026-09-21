@@ -471,7 +471,7 @@
 			(uuid "bdfcba40-1314-4f80-95bf-278d6011067d")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_1206_3216Metric.wrl"
+		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_1206_3216Metric.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -1044,7 +1044,7 @@
 			(uuid "3754a2f5-7f8b-45ee-861d-ee8a1d51fbcc")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/TerminalBlock_Phoenix.3dshapes/TerminalBlock_Phoenix_PT-1,5-2-5.0-H_1x02_P5.00mm_Horizontal.wrl"
+		(model "${KICAD10_3DMODEL_DIR}/TerminalBlock_Phoenix.3dshapes/TerminalBlock_Phoenix_PT-1,5-2-5.0-H_1x02_P5.00mm_Horizontal.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -4573,7 +4573,7 @@
 			(uuid "69b5112c-d54a-4c3b-855e-3406c9d58059")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/TerminalBlock_Phoenix.3dshapes/TerminalBlock_Phoenix_PT-1,5-2-5.0-H_1x02_P5.00mm_Horizontal.wrl"
+		(model "${KICAD10_3DMODEL_DIR}/TerminalBlock_Phoenix.3dshapes/TerminalBlock_Phoenix_PT-1,5-2-5.0-H_1x02_P5.00mm_Horizontal.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -4941,7 +4941,7 @@
 			(uuid "f6bce339-9cca-4e6b-8e47-35880315474d")
 		)
 		(embedded_fonts no)
-		(model "${KICAD6_3DMODEL_DIR}/LED_SMD.3dshapes/LED_1206_3216Metric.wrl"
+		(model "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_1206_3216Metric.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -9003,7 +9003,7 @@
 			(uuid "f5c1ceca-442f-45f7-8839-bd93fc3f1697")
 		)
 		(embedded_fonts no)
-		(model "${KICAD6_3DMODEL_DIR}/LED_SMD.3dshapes/LED_1206_3216Metric.wrl"
+		(model "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_1206_3216Metric.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -9704,7 +9704,7 @@
 			(uuid "11d5a5c2-f2fe-4e6e-a54a-70ea761c8643")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/TO-263-5_TabPin3.wrl"
+		(model "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/TO-263-5_TabPin3.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -10175,7 +10175,7 @@
 			(uuid "f6501b68-0b6f-42f6-9581-47c3acdf4aa2")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/TerminalBlock_Phoenix.3dshapes/TerminalBlock_Phoenix_PT-1,5-2-5.0-H_1x02_P5.00mm_Horizontal.wrl"
+		(model "${KICAD10_3DMODEL_DIR}/TerminalBlock_Phoenix.3dshapes/TerminalBlock_Phoenix_PT-1,5-2-5.0-H_1x02_P5.00mm_Horizontal.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -10646,7 +10646,7 @@
 			(uuid "301f6202-a225-48ba-9740-e58a4ceab37e")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/TerminalBlock_Phoenix.3dshapes/TerminalBlock_Phoenix_PT-1,5-2-5.0-H_1x02_P5.00mm_Horizontal.wrl"
+		(model "${KICAD10_3DMODEL_DIR}/TerminalBlock_Phoenix.3dshapes/TerminalBlock_Phoenix_PT-1,5-2-5.0-H_1x02_P5.00mm_Horizontal.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -10912,7 +10912,7 @@
 			(uuid "e0c22716-fe06-43a1-bdd3-b83623161772")
 		)
 		(embedded_fonts no)
-		(model "${KICAD6_3DMODEL_DIR}/LED_SMD.3dshapes/LED_1206_3216Metric.wrl"
+		(model "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_1206_3216Metric.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -11298,7 +11298,7 @@
 			(uuid "99901b0b-93ff-493d-8c82-b21ae54715c6")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/Inductor_THT.3dshapes/L_Toroid_Vertical_L10.0mm_W5.0mm_P5.08mm.wrl"
+		(model "${KICAD10_3DMODEL_DIR}/Inductor_THT.3dshapes/L_Toroid_Vertical_L10.0mm_W5.0mm_P5.08mm.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -11500,7 +11500,7 @@
 			(uuid "093a01c1-76ab-4e23-b5b3-ede6a5282810")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_1206_3216Metric.wrl"
+		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_1206_3216Metric.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -12048,7 +12048,7 @@
 			(uuid "7d0d406d-5a68-404a-a1de-0a0430ce1ce0")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_1206_3216Metric.wrl"
+		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_1206_3216Metric.step"
 			(offset
 				(xyz 0 0 0)
 			)

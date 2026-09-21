@@ -133,7 +133,7 @@ to `J4`, so the board still drops into the same case with the same wiring.
 
 | Board | Issue |
 |---|---|
-| `PSU` | **The board in service still has no catch diode.** The fix is in these files but not in the built hardware. Until the board is remade, fit a 3–5 A / 40 V Schottky on the back: cathode to `L1` pin 1, anode to the ground plane about 4 mm away, near the via at (129.0, 71.35) |
+| `PSU` | **Boards made from an earlier revision have no catch diode.** If you already built one, do not run it as it is: either remake it from the current files, or fit a 3–5 A / 40 V Schottky on the back, cathode to `L1` pin 1 and anode to the ground plane about 4 mm away, near the via at (129.0, 71.35). Check continuity to `J1` pin 2 with a meter before soldering |
 | `PSU` | `C1` sits across the 9 V input. Its voltage rating needs to be 25 V: a 1206 MLCC of that capacitance is typically rated 6.3 V or 10 V, which is at or over the limit and loses most of its capacitance to DC bias long before that |
 | `Backlighting_Dimmer`, `Backlighting_LEDModule` | The screw terminal footprint `TerminalBlock:TerminalBlock_bornier-2_P5.08mm` no longer exists in the KiCad library. KiCad 10 ships no 2-pin 5.08 mm terminal block at all, so there is nothing to point it at: retargeting it would change the pad geometry of a board that is already made. The copy embedded in the board is correct and is what gets manufactured; only the library link dangles |
 | `Korry_Large` | Four `+` and `-` markers on the back silkscreen are not mirrored. Both glyphs are symmetric so nothing reads wrong, and since they are justified `left bottom`, adding the mirror flag would shift them by about a glyph width. Left alone on purpose |

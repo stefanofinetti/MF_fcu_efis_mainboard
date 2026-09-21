@@ -123,6 +123,34 @@ still the old one.
 | **`F2` 1 A → 2 A** (`MF-RHT100` → `MF-RHT200`) | At 1.14 A out the input draws about 0.75 A. Derated for the temperature inside a printed case, a 1 A polyfuse holds under 0.8 A — too close to nuisance tripping. Pads are identical, so the swap costs nothing in layout |
 | **Power section re-laid out** | `U4` pin 2, the cathode of `D2` and pin 1 of `L1` now sit on one straight line at y = 64.95, and `C1` sits 4 mm under the VIN pin. The commutation loop went from *nonexistent* to about 4 mm of forward track each side |
 
+### Through-hole where it helps
+
+`D1`, `D2`, `C1` and `C2` were SMD; they are now through-hole. Two of those
+four are not a convenience:
+
+* `C1` sits across the 9 V input and needs 25 V of rating. A 1206 MLCC of
+  that capacitance does not exist at 25 V, so the part was always going to be
+  under-rated and to lose most of its capacitance to DC bias. As a radial
+  electrolytic the problem simply goes away.
+* `C2` is the buck's output capacitor, and the LM2596 wants some ESR there.
+  As a ceramic it had almost none, which is why `C4` was added; as an
+  electrolytic it provides it itself.
+
+`D1` and `D2` are 1N5822, 40 V 3 A, which is generous against the ~1 A each
+actually carries. `D2` is mounted vertically on a 5.08 mm pitch, shorter than
+the 6.8 mm of the SMC it replaces, so the commutation loop got slightly
+tighter rather than longer.
+
+Everything in the buck section is now through-hole except `U4`, whose tab
+needs the copper pour to dissipate, and the status LEDs with their resistors.
+A useful side effect: every ground pad in that section now passes through the
+board and reaches both planes on its own, so four stitching vias and their
+stubs are gone.
+
+Component spacing was opened up at the same time. Nothing placed by hand is
+closer than 2 mm to its neighbour now; the tightest pairs left on the board
+are the original LED-and-resistor pairs at 0.66 mm.
+
 ### The mainboard branch
 
 The mainboard needs a 5 V source that does not depend on the USB hub. It does
@@ -192,7 +220,6 @@ for the autorouter.
 | Board | Issue |
 |---|---|
 | `PSU` | **Boards made from an earlier revision have no catch diode.** If you already built one, do not run it as it is: either remake it from the current files, or fit a 3–5 A / 40 V Schottky on the back, cathode to `L1` pin 1 and anode to the ground plane about 4 mm away, near the via at (129.0, 71.35). Check continuity to `J1` pin 2 with a meter before soldering |
-| `PSU` | `C1` sits across the 9 V input. Its voltage rating needs to be 25 V: a 1206 MLCC of that capacitance is typically rated 6.3 V or 10 V, which is at or over the limit and loses most of its capacitance to DC bias long before that |
 | `Mainboard` | **The automatic supply selector is on the schematic but not on the board.** `U8` (TPS2115A), `J13`, `C25`–`C27` and `R32`–`R34` exist in `pwr_conn.kicad_sch` and ERC passes, but the PCB does not carry them yet, so schematic parity reports eight missing footprints. The board has no contiguous free area left for them near the power section — see *Mainboard selector* below |
 | `Backlighting_Dimmer`, `Backlighting_LEDModule` | The screw terminal footprint `TerminalBlock:TerminalBlock_bornier-2_P5.08mm` no longer exists in the KiCad library. KiCad 10 ships no 2-pin 5.08 mm terminal block at all, so there is nothing to point it at: retargeting it would change the pad geometry of a board that is already made. The copy embedded in the board is correct and is what gets manufactured; only the library link dangles |
 | `Korry_Large` | Four `+` and `-` markers on the back silkscreen are not mirrored. Both glyphs are symmetric so nothing reads wrong, and since they are justified `left bottom`, adding the mirror flag would shift them by about a glyph width. Left alone on purpose |

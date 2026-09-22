@@ -2477,7 +2477,7 @@
 		(uuid "f9b88cf5-bf4b-451c-959c-cc3f35c51c9d")
 	)
 	(symbol
-		(lib_id "power:+5V")
+		(lib_id "power:GND")
 		(at 77.47 124.46 180)
 		(unit 1)
 		(body_style 1)
@@ -2498,7 +2498,7 @@
 				)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "GND"
 			(at 77.47 131.572 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2849,7 +2849,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "power:+5V")
 		(at 25.4 124.46 0)
 		(unit 1)
 		(body_style 1)
@@ -2871,7 +2871,7 @@
 				)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "+5V"
 			(at 25.4 129.54 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2927,7 +2927,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "power:+5V")
 		(at 62.23 140.97 270)
 		(unit 1)
 		(body_style 1)
@@ -2949,7 +2949,7 @@
 				)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "+5V"
 			(at 58.42 140.9699 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3006,7 +3006,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "power:+5V")
 		(at 55.88 124.46 0)
 		(unit 1)
 		(body_style 1)
@@ -3028,7 +3028,7 @@
 				)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "+5V"
 			(at 55.88 129.54 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3260,7 +3260,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
+		(lib_id "power:GND")
 		(at 46.99 124.46 180)
 		(unit 1)
 		(body_style 1)
@@ -3281,7 +3281,7 @@
 				)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "GND"
 			(at 46.99 131.572 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3632,7 +3632,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
+		(lib_id "power:GND")
 		(at 62.23 143.51 90)
 		(unit 1)
 		(body_style 1)
@@ -3653,7 +3653,7 @@
 				)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "GND"
 			(at 55.118 143.51 90)
 			(show_name no)
 			(do_not_autoplace no)

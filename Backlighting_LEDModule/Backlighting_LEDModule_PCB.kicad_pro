@@ -523,7 +523,7 @@
         "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
-        "name": "+9V",
+        "name": "+5V",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 0,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
@@ -564,8 +564,8 @@
         "pattern": "GND"
       },
       {
-        "netclass": "+9V",
-        "pattern": "+9V"
+        "netclass": "+5V",
+        "pattern": "+5V"
       }
     ]
   },

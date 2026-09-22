@@ -323,10 +323,16 @@ editing the library footprint, which is worse than the complaint.
 - **`F8` in Pcbnew clears `exclude_from_pos_files` on the seven mounting
   holes**, which puts them into the pick-and-place file. Re-check before
   generating production output.
-- Five 3D models are missing because the KiCad 10 package does not ship
-  them, not because the path is wrong: the two Bourns polyfuses, the toroid,
-  the EuroQuartz crystal and the OST USB-B. `U1` on the `PSU` is a custom
-  footprint and never had one. Everything else renders.
+- Three 3D models are missing, and the KiCad package has nothing to stand in
+  for them: the two Bourns polyfuses on the `PSU`, the toroid `L1` beside
+  them, and `P1` on the mainboard. For the toroid the library carries only
+  common-mode ones, which have four pins instead of two; for `P1` the four
+  holes sit in a 2 x 2 pattern and every USB-A footprint KiCad ships puts its
+  pins in a single row. Everything else on all six boards renders. A few are
+  stand-ins of the same package rather than the same part number: the
+  crystals use the Wuerth 12SMX, same 7.0 x 5.0 four-pin outline, and the
+  P78A05 uses the RECOM R-78E, whose three pins sit on exactly the same
+  2.54 mm pitch.
 - Some tracks are narrower than their netclass and are meant to be. The two
   0.4102 mm segments on `+3V3` are the breakout from pad 24 of the PCA9548A,
   a 0.65 mm-pitch package whose pad is 0.41 mm tall: it is a dead-end spur

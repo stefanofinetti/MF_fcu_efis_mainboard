@@ -530,7 +530,7 @@
     "netclass_patterns": [
       {
         "netclass": "9V",
-        "pattern": "+9V"
+        "pattern": "/9V*"
       }
     ]
   },

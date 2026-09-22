@@ -7112,4 +7112,34 @@
 		)
 	)
 	(embedded_fonts no)
+	(label "9V_IN"
+		(at 50.8 76.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c4f8c1dc-bbee-48cc-ba84-ce813067c866")
+	)
+	(label "9V"
+		(at 72.39 76.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "736b5e9f-50fd-4067-941a-7d015a61f008")
+	)
+	(label "9V_BL"
+		(at 110.49 76.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "20fc104b-5c4c-4ffe-b38f-17de4ac7182c")
+	)
 )

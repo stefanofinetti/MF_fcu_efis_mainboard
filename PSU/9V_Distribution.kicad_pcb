@@ -8949,15 +8949,15 @@
 			(uuid "82b07ea2-def2-418a-9bbf-a43f225b09f4")
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Fuse.3dshapes/Fuse_Bourns_MF-RHT050.step"
+		(model "${KIPRJMOD}/3dmodels/Fuse_Bourns_MF-RHT050.step"
 			(offset
-				(xyz 0 0 0)
+				(xyz 2.55 0 0)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 0)
+				(xyz 90 0 0)
 			)
 		)
 	)

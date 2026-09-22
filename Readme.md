@@ -296,15 +296,17 @@ parity issues:
 |---|---|---|
 | `Mainboard` | clean | clean |
 | `PSU` | clean | clean |
-| `Backlighting_Dimmer` | 1 | clean |
+| `Backlighting_Dimmer` | clean | clean |
 | `Backlighting_LEDModule` | clean | clean |
 | `Korry_Large` | clean | clean |
 | `Korry_Small` | clean | clean |
 
-The one DRC warning is on the dimmer and is deliberate: the wire-entry
-drawing of `J32` reaches within 0.02 mm of the board edge, so a sliver of
-ink gets clipped. Moving `J32` down is not possible — `C4` sits 0.04 mm
-under its courtyard and the usable window is 10.49 mm tall for a 10 mm body.
+The dimmer carries one excluded violation, recorded in the project file: the
+wire-entry drawing inside the `J32` footprint reaches within 0.02 mm of the
+board edge, so two hundredths of a millimetre of ink do not get printed.
+`J32` cannot move down — `C4` sits 0.04 mm under its courtyard and the
+usable window is 10.49 mm tall for a 10 mm body — and the alternative was
+editing the library footprint, which is worse than the complaint.
 
 
 ## Gotchas

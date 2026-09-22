@@ -15651,4 +15651,59 @@
 		)
 	)
 	(embedded_fonts no)
+	(gr_text "5V BACKLIGHT"
+		(at 109.5 24 0)
+		(layer "F.SilkS")
+		(uuid "78d9d891-82ff-45be-8d7a-2fa2388154a1")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(gr_text "5V BACKLIGHT"
+		(at 125 24 0)
+		(layer "F.SilkS")
+		(uuid "e51e2dc4-8e06-47a7-8548-146648168102")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(gr_text "5V BACKLIGHT"
+		(at 140.5 24 0)
+		(layer "F.SilkS")
+		(uuid "61bd3785-d8af-41a4-88ce-76fefe794a5d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(gr_text "5V MAINBOARD"
+		(at 157.5 25.5 0)
+		(layer "F.SilkS")
+		(uuid "7cb16278-d28b-428a-8787-e525c695fb2b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(gr_text "9V IN"
+		(at 140.5 97 0)
+		(layer "F.SilkS")
+		(uuid "af1356ff-8d90-4efe-b057-8f7420573941")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
 )

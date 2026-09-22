@@ -1475,8 +1475,8 @@
 			)
 		)
 		(property "Value" "Backlighting POT"
-			(at 0 7.41 0)
-			(layer "F.Fab")
+			(at -4.07 7.41 0)
+			(layer "F.SilkS")
 			(uuid "ce6131cc-b28c-4613-94ca-7c5ab28b35ab")
 			(effects
 				(font
@@ -6760,4 +6760,48 @@
 		)
 	)
 	(embedded_fonts no)
+	(gr_text "5V IN"
+		(at 79.2 36 0)
+		(layer "F.SilkS")
+		(uuid "5dd952a2-ec8f-41d5-9278-04a52367762b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(gr_text "TO LEDMODULE"
+		(at 63.94 72.4 0)
+		(layer "F.SilkS")
+		(uuid "b0177c07-ba81-40d0-8579-e8cc5f60e22c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(gr_text "TO LEDMODULE"
+		(at 79.1 72.4 0)
+		(layer "F.SilkS")
+		(uuid "4f8cf2cc-038a-49b0-a1a3-12fd7589c814")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(gr_text "TO LEDMODULE"
+		(at 94.22 72.4 0)
+		(layer "F.SilkS")
+		(uuid "ad79ef13-4ed5-4121-a3b2-8d5e6d4b4703")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
 )

@@ -111,7 +111,7 @@
 		)
 		(property "Value" "220"
 			(at 0 1.82 90)
-			(layer "F.Fab")
+			(layer "F.SilkS")
 			(uuid "a0e3716c-92d4-4905-a8fc-74e641abd414")
 			(effects
 				(font
@@ -313,7 +313,7 @@
 		)
 		(property "Value" "BK_LED"
 			(at 0 4.87 90)
-			(layer "F.Fab")
+			(layer "F.SilkS")
 			(uuid "dcf316f1-1c2a-4a37-9ad0-7a0efa262c61")
 			(effects
 				(font
@@ -568,8 +568,8 @@
 			)
 		)
 		(property "Value" "BTN+LED"
-			(at 0 7.41 90)
-			(layer "F.Fab")
+			(at 5.3 2.55 0)
+			(layer "F.SilkS")
 			(uuid "60889aaa-630e-4640-a22d-bfca2d03e495")
 			(effects
 				(font
@@ -835,8 +835,8 @@
 			)
 		)
 		(property "Value" "91"
-			(at 0 1.82 270)
-			(layer "F.Fab")
+			(at -3.33 0 0)
+			(layer "F.SilkS")
 			(uuid "0ed10960-ccdb-472f-b9fd-0f01562b1203")
 			(effects
 				(font

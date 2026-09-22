@@ -2786,4 +2786,15 @@
 			(justify left bottom)
 		)
 	)
+	(gr_text "5V IN"
+		(at 117.8 94 0)
+		(layer "F.SilkS")
+		(uuid "07f51144-1a62-4ff4-b5c4-144ee2d721f3")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
 )

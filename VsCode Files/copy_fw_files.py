@@ -5,7 +5,7 @@ from pathlib import Path
 # Get the version number from the build environment.
 firmware_version = os.environ.get('VERSION', "")
 if firmware_version == "":
-    firmware_version = "0.9.3"
+    firmware_version = "1.0.1"
 firmware_version = firmware_version.lstrip("v")
 firmware_version = firmware_version.strip(".")
 

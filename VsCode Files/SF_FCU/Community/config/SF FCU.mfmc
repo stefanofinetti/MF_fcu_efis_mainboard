@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <ModuleType>SF FCU Mainboard Mega</ModuleType>
-  <ModuleName>SF FCU Mainboard</ModuleName>
+  <ModuleType>SF FCU Mega</ModuleType>
+  <ModuleName>SF FCU</ModuleName>
   <PowerSavingTime>600</PowerSavingTime>
-  <CustomDevice Name="SF FCU Mainboard" CustomType="SF_FCU_MAINBOARD" Pins="112" Config="">
+  <CustomDevice Name="SF FCU" CustomType="SF_FCU" Pins="112" Config="">
     <ConfiguredPins>
       <string>112</string>
     </ConfiguredPins>

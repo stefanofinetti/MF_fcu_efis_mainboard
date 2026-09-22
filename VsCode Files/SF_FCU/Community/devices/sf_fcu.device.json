@@ -1,11 +1,11 @@
 {
     "$schema": "./mfdevice.schema.json",
     "Info": {
-      "Label": "SF FCU Mainboard",
-      "Type": "SF_FCU_MAINBOARD",
-      "Author": "Stefano Finetti",
-      "URL": "https://github.com",
-      "Version" : "0.9.3"
+      "Label": "SF FCU",
+      "Type": "SF_FCU",
+      "Author": "Stefano Finetti, based on Gagagu/elral",
+      "URL": "https://github.com/stefanofinetti/MF_A320_Glareshield",
+      "Version" : "1.0.1"
     },
     "Config": {
       "Pins": [],

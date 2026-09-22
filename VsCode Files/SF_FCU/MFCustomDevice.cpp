@@ -68,7 +68,7 @@ void MFCustomDevice::attach(uint16_t adrPin, uint16_t adrType, uint16_t adrConfi
         is used to store the type
     ********************************************************************************** */
     getStringFromEEPROM(adrType, parameter);
-    if (strcmp(parameter, "SF_FCU_MAINBOARD") == 0)
+    if (strcmp(parameter, "SF_FCU") == 0)
         _customType = FCU_EFIS_DEVICE;
 
     if (_customType == FCU_EFIS_DEVICE) {

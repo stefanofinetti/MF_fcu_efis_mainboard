@@ -11504,7 +11504,7 @@
 			(uuid "4cd33bff-9d97-4f5c-9a2d-bb8d593f6415")
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Fuse.3dshapes/Fuse_Bourns_MF-RHT200.step"
+		(model "${KIPRJMOD}/3dmodels/Fuse_Bourns_MF-RHT200.step"
 			(offset
 				(xyz 0 0 0)
 			)

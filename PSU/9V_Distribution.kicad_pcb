@@ -8951,13 +8951,13 @@
 		(embedded_fonts no)
 		(model "${KIPRJMOD}/3dmodels/Fuse_Bourns_MF-RHT050.step"
 			(offset
-				(xyz 2.55 0 0)
+				(xyz 2.55 -0.5 10)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 90 0 0)
+				(xyz -90 -0 -7)
 			)
 		)
 	)

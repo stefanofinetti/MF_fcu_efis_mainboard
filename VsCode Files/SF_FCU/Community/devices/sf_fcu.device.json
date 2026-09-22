@@ -5,7 +5,7 @@
       "Type": "SF_FCU",
       "Author": "Stefano Finetti, based on Gagagu/elral",
       "URL": "https://github.com/stefanofinetti/MF_A320_Glareshield",
-      "Version" : "1.0.1"
+      "Version" : "1.1.0"
     },
     "Config": {
       "Pins": [],

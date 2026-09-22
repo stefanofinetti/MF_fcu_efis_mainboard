@@ -57,15 +57,17 @@ void FCU_EFIS::attach(uint8_t addrI2C)
     _addrI2C = addrI2C;
     Wire.begin();
     Wire.setClock(400000);
-    if (!FitInMemory(sizeof(OLEDInterface))) {
+    void *mem = MF_ALLOC_TYPE(OLEDInterface, 1);
+    if (!mem) {
         // Error Message to Connector
         cmdMessenger.sendCmd(kStatus, F("Custom Device does not fit in Memory"));
         return;
     }
+    // an odd address selects the SSD1306 driver, an even one the SH1106
     if (_addrI2C & 0x01) {
-        oled = new (allocateMemory(sizeof(OLEDInterface))) OLEDInterface(SSD1306);
+        oled = new (mem) OLEDInterface(SSD1306);
     } else {
-        oled = new (allocateMemory(sizeof(OLEDInterface))) OLEDInterface(SH1106);
+        oled = new (mem) OLEDInterface(SH1106);
     }
     _initialised = true;
 }

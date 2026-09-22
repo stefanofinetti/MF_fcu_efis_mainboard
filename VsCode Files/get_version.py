@@ -6,9 +6,9 @@ firmware_version = os.environ.get('VERSION', "")
 
 # Clean up the version number
 if firmware_version == "":
-  # When no version is specified default to "1.0.1" for
+  # When no version is specified default to "0.0.1" for
   # compatibility with MobiFlight desktop app version checks.
-  firmware_version = "1.0.1"
+  firmware_version = "0.0.1"
 
 # Strip any leading "v" that might be on the version and
 # any leading or trailing periods.

@@ -23723,12 +23723,12 @@
 			(uuid "614a9ef5-2023-4fc0-867f-be7c017bed8d")
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Connector_USB.3dshapes/USB_B_OST_USB-B1HSxx_Horizontal.step"
+		(model "${KIPRJMOD}/3dmodels/USB_B_SameSky_UJ2-BH-1-TH.step"
 			(offset
-				(xyz 0 0 0)
+				(xyz 1 1 1)
 			)
 			(scale
-				(xyz 1 1 1)
+				(xyz 2.5 2.5 2.5)
 			)
 			(rotate
 				(xyz 0 0 0)

@@ -253,9 +253,7 @@ piece of text carries the meaning.
 
 ## Known issues
 
-| Board | Issue |
-|---|---|
-| `Backlighting_Dimmer`, `Backlighting_LEDModule` | The screw terminal footprint `TerminalBlock:TerminalBlock_bornier-2_P5.08mm` no longer exists in the KiCad library. KiCad 10 does ship seven other 2-pin 5.08 mm blocks, but none with the same pads, so retargeting it would change the drill and pad geometry. The copy embedded in the board is correct and is what gets manufactured; only the library link dangles. This is **not** the same part as the Phoenix `PT-1,5-2-5.0-H` on the `PSU` and the `Mainboard`, which resolves normally and renders in 3D |
+None open.
 
 ## Libraries you will need
 

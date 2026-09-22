@@ -10649,12 +10649,12 @@
 			(uuid "99901b0b-93ff-493d-8c82-b21ae54715c6")
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Inductor_THT.3dshapes/L_Toroid_Vertical_L10.0mm_W5.0mm_P5.08mm.step"
+		(model "${KIPRJMOD}/3dmodels/2100LL-1R0-V-RC.step"
 			(offset
 				(xyz 0 0 0)
 			)
 			(scale
-				(xyz 1 1 1)
+				(xyz 0.48 0.48 0.48)
 			)
 			(rotate
 				(xyz 0 0 0)

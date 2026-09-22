@@ -557,14 +557,14 @@
       "version": 5
     },
     "net_colors": {
-      "+9V": "rgb(255, 41, 34)",
+      "+5V": "rgb(255, 41, 34)",
       "GND": "rgb(30, 83, 255)"
     },
     "netclass_assignments": null,
     "netclass_patterns": [
       {
         "netclass": "PowerLine",
-        "pattern": "+9V"
+        "pattern": "+5V"
       },
       {
         "netclass": "PowerLine",

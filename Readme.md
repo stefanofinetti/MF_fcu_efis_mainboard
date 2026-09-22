@@ -119,9 +119,7 @@ has margin to spare.
 
 ## PSU revision
 
-The 9 V distribution board was reworked. The schematic and layout in this
-repository are the revised version; the board physically in the glareshield is
-still the old one.
+The 9 V distribution board was reworked.
 
 | Change | Why |
 |---|---|
@@ -237,8 +235,7 @@ from there down only the `SEL` divider draws, which is microamps.
 
 | Board | Issue |
 |---|---|
-| `PSU` | **Boards made from an earlier revision have no catch diode.** If you already built one, do not run it as it is: either remake it from the current files, or fit a 3–5 A / 40 V Schottky on the back, cathode to `L1` pin 1 and anode to the ground plane about 4 mm away, near the via at (129.0, 71.35) — those are coordinates in the *old* layout, which is the one such a board was made from, not in the files here. Check continuity to `J1` pin 2 with a meter before soldering |
-| `Backlighting_Dimmer`, `Backlighting_LEDModule` | The screw terminal footprint `TerminalBlock:TerminalBlock_bornier-2_P5.08mm` no longer exists in the KiCad library. KiCad 10 does ship seven other 2-pin 5.08 mm blocks, but none with those pads, so retargeting it would change the drill and pad geometry of a board that is already made. The copy embedded in the board is correct and is what gets manufactured; only the library link dangles. This is **not** the same part as the Phoenix `PT-1,5-2-5.0-H` on the `PSU` and the `Mainboard`, which resolves normally and renders in 3D |
+| `Backlighting_Dimmer`, `Backlighting_LEDModule` | The screw terminal footprint `TerminalBlock:TerminalBlock_bornier-2_P5.08mm` no longer exists in the KiCad library. KiCad 10 does ship seven other 2-pin 5.08 mm blocks, but none with the same pads, so retargeting it would change the drill and pad geometry. The copy embedded in the board is correct and is what gets manufactured; only the library link dangles. This is **not** the same part as the Phoenix `PT-1,5-2-5.0-H` on the `PSU` and the `Mainboard`, which resolves normally and renders in 3D |
 | `Korry_Large` | Four `+` and `-` markers on the back silkscreen are not mirrored. Both glyphs are symmetric so nothing reads wrong, and since they are justified `left bottom`, adding the mirror flag would shift them by about a glyph width. Left alone on purpose |
 
 ## Libraries you will need
@@ -257,10 +254,8 @@ Install these from the Plugin and Content Manager to clear them:
 The remaining `lib_footprint_mismatch` warnings are footprints that changed
 between the KiCad version each board was drawn in and version 10. Running
 `Update Footprints from Library` clears them, but it does change pad and
-silkscreen geometry, so it is worth reading the diff before doing it on a
-board that is already made. It has been run on the `PSU`, which is not built
-in its current form; the four boards that are already made still carry their
-original footprints on purpose.
+silkscreen geometry, so it is worth reading the diff first. It has been run
+on the `PSU`.
 
 What each board reports today, all of them with 0 unconnected items and 0
 parity issues:

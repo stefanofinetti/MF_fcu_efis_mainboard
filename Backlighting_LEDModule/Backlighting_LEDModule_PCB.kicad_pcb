@@ -487,6 +487,18 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "connector/pin_header_socket"
+			(at 0 0 180)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "f06fc862-4976-4ed1-891a-12dd4d03847f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Connector*:*_2x??_*")
 		(path "/ca3c01fb-75c5-459e-ac86-761b9505f713")
 		(sheetname "Root")
@@ -494,38 +506,8 @@
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start 3.87 -1.33)
-			(end 3.87 24.19)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "e11ea262-0738-4fda-a862-9218a39b13df")
-		)
-		(fp_line
-			(start 1.27 1.27)
-			(end 1.27 -1.33)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "9d70fa69-a52f-49fc-a8fa-49b55c70683d")
-		)
-		(fp_line
-			(start 1.27 -1.33)
-			(end 3.87 -1.33)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "2a392a8e-7bf4-42a5-8b86-397011c55cfe")
-		)
-		(fp_line
-			(start -1.33 24.19)
-			(end 3.87 24.19)
+			(start 3.92 -1.38)
+			(end 3.92 24.24)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -534,7 +516,37 @@
 			(uuid "a9958113-9fd5-4d39-940b-2c125651d244")
 		)
 		(fp_line
-			(start -1.33 1.27)
+			(start 1.27 1.27)
+			(end 1.27 -1.38)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "9d70fa69-a52f-49fc-a8fa-49b55c70683d")
+		)
+		(fp_line
+			(start 1.27 -1.38)
+			(end 3.92 -1.38)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "7cb8e8f2-208a-4272-ba5c-6d0d9f0d77b9")
+		)
+		(fp_line
+			(start -1.38 24.24)
+			(end 3.92 24.24)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "e11ea262-0738-4fda-a862-9218a39b13df")
+		)
+		(fp_line
+			(start -1.38 1.27)
 			(end 1.27 1.27)
 			(stroke
 				(width 0.12)
@@ -544,28 +556,18 @@
 			(uuid "71ae056c-5044-402b-ac8b-a3d5d1d3e5d7")
 		)
 		(fp_line
-			(start -1.33 1.27)
-			(end -1.33 24.19)
+			(start -1.38 1.27)
+			(end -1.38 24.24)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "7cb8e8f2-208a-4272-ba5c-6d0d9f0d77b9")
+			(uuid "2a392a8e-7bf4-42a5-8b86-397011c55cfe")
 		)
 		(fp_line
-			(start -1.33 0)
-			(end -1.33 -1.33)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "9e2a7d0b-ac23-4bdf-bae8-370ea230c544")
-		)
-		(fp_line
-			(start -1.33 -1.33)
-			(end 0 -1.33)
+			(start -1.38 0)
+			(end -1.38 -1.38)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -574,44 +576,25 @@
 			(uuid "05608b0e-f4cf-4ca4-b7b6-f6ad34351010")
 		)
 		(fp_line
-			(start 4.35 24.65)
-			(end 4.35 -1.8)
+			(start -1.38 -1.38)
+			(end 0 -1.38)
 			(stroke
-				(width 0.05)
+				(width 0.12)
 				(type solid)
 			)
-			(layer "F.CrtYd")
-			(uuid "4a4c9643-4f5f-41cd-a904-e972a58c9b2b")
+			(layer "F.SilkS")
+			(uuid "9e2a7d0b-ac23-4bdf-bae8-370ea230c544")
 		)
-		(fp_line
-			(start 4.35 -1.8)
-			(end -1.8 -1.8)
+		(fp_rect
+			(start -1.77 -1.77)
+			(end 4.32 24.63)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
+			(fill no)
 			(layer "F.CrtYd")
-			(uuid "db12233a-d5cd-46fb-89e6-a543da93df8a")
-		)
-		(fp_line
-			(start -1.8 24.65)
-			(end 4.35 24.65)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "bf1bf6a3-5dde-4e33-884e-d13ea66a8916")
-		)
-		(fp_line
-			(start -1.8 -1.8)
-			(end -1.8 24.65)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "cdd251f0-f154-4be6-85b2-81229de1e67b")
+			(uuid "70fcf6a1-436a-45f0-9f75-a76dabcbebb9")
 		)
 		(fp_line
 			(start 3.81 24.13)
@@ -685,7 +668,7 @@
 			(pintype "passive")
 			(uuid "8d21af44-81e0-4d62-83b5-3b0f6d4790b8")
 		)
-		(pad "2" thru_hole oval
+		(pad "2" thru_hole circle
 			(at 2.54 0 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -696,7 +679,7 @@
 			(pintype "passive")
 			(uuid "d181027f-38e8-4f27-86b4-7851acee328a")
 		)
-		(pad "3" thru_hole oval
+		(pad "3" thru_hole circle
 			(at 0 2.54 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -707,7 +690,7 @@
 			(pintype "passive")
 			(uuid "41c0882f-df82-4fb1-bd54-fc2d46440198")
 		)
-		(pad "4" thru_hole oval
+		(pad "4" thru_hole circle
 			(at 2.54 2.54 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -718,7 +701,7 @@
 			(pintype "passive")
 			(uuid "1f78fcea-ba81-40d3-a013-f143ad7465de")
 		)
-		(pad "5" thru_hole oval
+		(pad "5" thru_hole circle
 			(at 0 5.08 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -729,7 +712,7 @@
 			(pintype "passive")
 			(uuid "95942a70-3bca-45d0-9e1a-fedd0e7d1de3")
 		)
-		(pad "6" thru_hole oval
+		(pad "6" thru_hole circle
 			(at 2.54 5.08 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -740,7 +723,7 @@
 			(pintype "passive")
 			(uuid "53d540e8-880a-47a2-8824-f8a575e127a6")
 		)
-		(pad "7" thru_hole oval
+		(pad "7" thru_hole circle
 			(at 0 7.62 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -751,7 +734,7 @@
 			(pintype "passive")
 			(uuid "a30089e8-89c0-4748-bc3c-8d1f9747bbaa")
 		)
-		(pad "8" thru_hole oval
+		(pad "8" thru_hole circle
 			(at 2.54 7.62 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -762,7 +745,7 @@
 			(pintype "passive")
 			(uuid "8739540e-7c2b-4e43-930a-edf582424c35")
 		)
-		(pad "9" thru_hole oval
+		(pad "9" thru_hole circle
 			(at 0 10.16 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -773,7 +756,7 @@
 			(pintype "passive")
 			(uuid "1f8a2125-f482-4a7f-b0d2-e0e36ede5421")
 		)
-		(pad "10" thru_hole oval
+		(pad "10" thru_hole circle
 			(at 2.54 10.16 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -784,7 +767,7 @@
 			(pintype "passive")
 			(uuid "c40689b5-eb49-44e1-b328-128f180512c8")
 		)
-		(pad "11" thru_hole oval
+		(pad "11" thru_hole circle
 			(at 0 12.7 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -795,7 +778,7 @@
 			(pintype "passive")
 			(uuid "3e4b3ffa-b8ce-45cb-bb71-f2333c7a5512")
 		)
-		(pad "12" thru_hole oval
+		(pad "12" thru_hole circle
 			(at 2.54 12.7 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -806,7 +789,7 @@
 			(pintype "passive")
 			(uuid "a29416c8-d3fd-4368-80b6-bea033f9cc81")
 		)
-		(pad "13" thru_hole oval
+		(pad "13" thru_hole circle
 			(at 0 15.24 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -817,7 +800,7 @@
 			(pintype "passive")
 			(uuid "e8ed0d89-4bf3-494e-858e-b41eeb5dfcda")
 		)
-		(pad "14" thru_hole oval
+		(pad "14" thru_hole circle
 			(at 2.54 15.24 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -828,7 +811,7 @@
 			(pintype "passive")
 			(uuid "09bfdf4a-965c-4da3-8544-777fe8f1a8d6")
 		)
-		(pad "15" thru_hole oval
+		(pad "15" thru_hole circle
 			(at 0 17.78 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -839,7 +822,7 @@
 			(pintype "passive")
 			(uuid "8b3b03e4-f430-4191-ac34-8779f1544113")
 		)
-		(pad "16" thru_hole oval
+		(pad "16" thru_hole circle
 			(at 2.54 17.78 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -850,7 +833,7 @@
 			(pintype "passive")
 			(uuid "8abedb68-386d-48ba-b21a-e20b26ccb57a")
 		)
-		(pad "17" thru_hole oval
+		(pad "17" thru_hole circle
 			(at 0 20.32 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -861,7 +844,7 @@
 			(pintype "passive")
 			(uuid "7b08236f-0b0f-4ca9-9747-d0db2b52b21e")
 		)
-		(pad "18" thru_hole oval
+		(pad "18" thru_hole circle
 			(at 2.54 20.32 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -872,7 +855,7 @@
 			(pintype "passive")
 			(uuid "af72a6b2-9423-4098-a42c-8a798688322a")
 		)
-		(pad "19" thru_hole oval
+		(pad "19" thru_hole circle
 			(at 0 22.86 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -883,7 +866,7 @@
 			(pintype "passive")
 			(uuid "658795ae-7f96-4e9d-b0cc-3821e2920bd0")
 		)
-		(pad "20" thru_hole oval
+		(pad "20" thru_hole circle
 			(at 2.54 22.86 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -895,7 +878,7 @@
 			(uuid "3d4f1995-f5de-4744-acee-03c07c2e895e")
 		)
 		(embedded_fonts no)
-		(model "${KICAD8_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_2x10_P2.54mm_Vertical.wrl"
+		(model "${KICAD10_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_2x10_P2.54mm_Vertical.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -911,8 +894,8 @@
 		(layer "F.Cu")
 		(uuid "8c490ac7-561d-4abd-806b-1cc52ec6f986")
 		(at 116.75 55.5)
-		(descr "Mounting Hole 3.2mm, M3, DIN965")
-		(tags "mounting hole 3.2mm m3 din965")
+		(descr "Mounting Hole 3.2mm, M3, generated by kicad-footprint-generator mountinghole.py")
+		(tags "mountinghole M3 DIN965")
 		(property "Reference" "H2"
 			(at 0 -3.8 0)
 			(layer "F.SilkS")
@@ -955,6 +938,18 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "KiLib_Generator" "mounting_hardware/mounting_hole"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "efb71cb3-c1e6-4208-9abe-9a10bba56e43")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -1004,18 +999,21 @@
 			(drill 3.2)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
+			(zone_connect 2)
 			(uuid "e3ccd58d-0943-4d41-bf9d-b3b63d6c97f7")
 		)
 		(pad "1" connect circle
 			(at 0 0)
 			(size 5.6 5.6)
 			(layers "F.Cu" "F.Mask")
+			(zone_connect 2)
 			(uuid "04b1c874-aa6e-43eb-9164-87cb21f24341")
 		)
 		(pad "1" connect circle
 			(at 0 0)
 			(size 5.6 5.6)
 			(layers "B.Cu" "B.Mask")
+			(zone_connect 2)
 			(uuid "5e61e8ae-c702-4d0f-b3da-ecacc44a930a")
 		)
 		(embedded_fonts no)
@@ -1074,6 +1072,18 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "connector/pin_header_socket"
+			(at 0 0 180)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "cca1bd6d-ac8c-4426-842a-c9b91c0a5858")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Connector*:*_2x??_*")
 		(path "/36987a6e-9e6f-4dfa-9016-495b1c3e86d9")
 		(sheetname "Root")
@@ -1081,28 +1091,8 @@
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start 3.87 -1.33)
-			(end 3.87 24.19)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "bafd2656-d224-4343-aff5-f6f3e18c5eb8")
-		)
-		(fp_line
-			(start 1.27 1.27)
-			(end 1.27 -1.33)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "2a02e819-65c5-4ef1-b397-b1e01e21ea45")
-		)
-		(fp_line
-			(start 1.27 -1.33)
-			(end 3.87 -1.33)
+			(start 3.92 -1.38)
+			(end 3.92 24.24)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -1111,17 +1101,37 @@
 			(uuid "b6c12354-adb4-417a-9554-db9141fb0bff")
 		)
 		(fp_line
-			(start -1.33 24.19)
-			(end 3.87 24.19)
+			(start 1.27 1.27)
+			(end 1.27 -1.38)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "165c92d3-451a-479e-8ad2-ee605d84633e")
+			(uuid "2a02e819-65c5-4ef1-b397-b1e01e21ea45")
 		)
 		(fp_line
-			(start -1.33 1.27)
+			(start 1.27 -1.38)
+			(end 3.92 -1.38)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "01ebf698-9196-472a-a33f-78fca2eca76e")
+		)
+		(fp_line
+			(start -1.38 24.24)
+			(end 3.92 24.24)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "bafd2656-d224-4343-aff5-f6f3e18c5eb8")
+		)
+		(fp_line
+			(start -1.38 1.27)
 			(end 1.27 1.27)
 			(stroke
 				(width 0.12)
@@ -1131,8 +1141,18 @@
 			(uuid "4da047ad-f350-433e-9584-01e24d6cd664")
 		)
 		(fp_line
-			(start -1.33 1.27)
-			(end -1.33 24.19)
+			(start -1.38 1.27)
+			(end -1.38 24.24)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "165c92d3-451a-479e-8ad2-ee605d84633e")
+		)
+		(fp_line
+			(start -1.38 0)
+			(end -1.38 -1.38)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -1141,18 +1161,8 @@
 			(uuid "5a4f196f-49c5-4dca-b6d0-a3b3fdae1deb")
 		)
 		(fp_line
-			(start -1.33 0)
-			(end -1.33 -1.33)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "01ebf698-9196-472a-a33f-78fca2eca76e")
-		)
-		(fp_line
-			(start -1.33 -1.33)
-			(end 0 -1.33)
+			(start -1.38 -1.38)
+			(end 0 -1.38)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -1160,45 +1170,16 @@
 			(layer "F.SilkS")
 			(uuid "6265ad1d-2769-4227-bf8f-8e889b93be0c")
 		)
-		(fp_line
-			(start 4.35 24.65)
-			(end 4.35 -1.8)
+		(fp_rect
+			(start -1.77 -1.77)
+			(end 4.32 24.63)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
+			(fill no)
 			(layer "F.CrtYd")
-			(uuid "a13d0a26-6511-4990-87d2-32ecd3af39e8")
-		)
-		(fp_line
-			(start 4.35 -1.8)
-			(end -1.8 -1.8)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "9aa144f8-f2c7-4bbb-974a-05f7f68680ce")
-		)
-		(fp_line
-			(start -1.8 24.65)
-			(end 4.35 24.65)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "d7b82411-08fc-4e56-a9f2-128120b6d77e")
-		)
-		(fp_line
-			(start -1.8 -1.8)
-			(end -1.8 24.65)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "f9c8aeaf-e345-4acd-a6b7-a9cf15644718")
+			(uuid "221842b5-5cf5-4efe-aec8-867c46bab346")
 		)
 		(fp_line
 			(start 3.81 24.13)
@@ -1272,7 +1253,7 @@
 			(pintype "passive")
 			(uuid "fb766640-70ed-4ce2-bd92-8282650ae800")
 		)
-		(pad "2" thru_hole oval
+		(pad "2" thru_hole circle
 			(at 2.54 0 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -1283,7 +1264,7 @@
 			(pintype "passive")
 			(uuid "a9217193-c27d-4260-838f-4d63b0aa6ce1")
 		)
-		(pad "3" thru_hole oval
+		(pad "3" thru_hole circle
 			(at 0 2.54 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -1294,7 +1275,7 @@
 			(pintype "passive")
 			(uuid "80093979-47e4-4656-873b-419e08e69fd9")
 		)
-		(pad "4" thru_hole oval
+		(pad "4" thru_hole circle
 			(at 2.54 2.54 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -1305,7 +1286,7 @@
 			(pintype "passive")
 			(uuid "85c3b86c-f06f-4f06-9bcd-94550a27371e")
 		)
-		(pad "5" thru_hole oval
+		(pad "5" thru_hole circle
 			(at 0 5.08 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -1316,7 +1297,7 @@
 			(pintype "passive")
 			(uuid "6309c0f7-43db-4cfb-86d2-8e1a438a4cc7")
 		)
-		(pad "6" thru_hole oval
+		(pad "6" thru_hole circle
 			(at 2.54 5.08 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -1327,7 +1308,7 @@
 			(pintype "passive")
 			(uuid "9db53f62-7183-4586-b683-96629de59331")
 		)
-		(pad "7" thru_hole oval
+		(pad "7" thru_hole circle
 			(at 0 7.62 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -1338,7 +1319,7 @@
 			(pintype "passive")
 			(uuid "56a49c2d-c1d7-45a9-8a84-82571bd1a711")
 		)
-		(pad "8" thru_hole oval
+		(pad "8" thru_hole circle
 			(at 2.54 7.62 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -1349,7 +1330,7 @@
 			(pintype "passive")
 			(uuid "00a90d6a-f40f-4590-9ee0-039376d61655")
 		)
-		(pad "9" thru_hole oval
+		(pad "9" thru_hole circle
 			(at 0 10.16 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -1360,7 +1341,7 @@
 			(pintype "passive")
 			(uuid "3d90b482-31e4-4edf-b026-3853b62aff36")
 		)
-		(pad "10" thru_hole oval
+		(pad "10" thru_hole circle
 			(at 2.54 10.16 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -1371,7 +1352,7 @@
 			(pintype "passive")
 			(uuid "7de5fdc2-6d34-4732-b73f-f22a6a2497b3")
 		)
-		(pad "11" thru_hole oval
+		(pad "11" thru_hole circle
 			(at 0 12.7 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -1382,7 +1363,7 @@
 			(pintype "passive")
 			(uuid "2270e37b-dd07-4970-a4f7-08a1f8bfb07b")
 		)
-		(pad "12" thru_hole oval
+		(pad "12" thru_hole circle
 			(at 2.54 12.7 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -1393,7 +1374,7 @@
 			(pintype "passive")
 			(uuid "80d5fcba-a4db-4124-bcb3-ece7bfec45d6")
 		)
-		(pad "13" thru_hole oval
+		(pad "13" thru_hole circle
 			(at 0 15.24 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -1404,7 +1385,7 @@
 			(pintype "passive")
 			(uuid "4344a34a-af28-4786-9b03-9d3bdd983326")
 		)
-		(pad "14" thru_hole oval
+		(pad "14" thru_hole circle
 			(at 2.54 15.24 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -1415,7 +1396,7 @@
 			(pintype "passive")
 			(uuid "c4204bfe-b35a-487a-8882-8abb75be1fd6")
 		)
-		(pad "15" thru_hole oval
+		(pad "15" thru_hole circle
 			(at 0 17.78 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -1426,7 +1407,7 @@
 			(pintype "passive")
 			(uuid "bf161bae-d16f-4fea-8c53-b91d8712b736")
 		)
-		(pad "16" thru_hole oval
+		(pad "16" thru_hole circle
 			(at 2.54 17.78 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -1437,7 +1418,7 @@
 			(pintype "passive")
 			(uuid "bf70b027-a8a5-4e25-b87d-4f16fa44c831")
 		)
-		(pad "17" thru_hole oval
+		(pad "17" thru_hole circle
 			(at 0 20.32 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -1448,7 +1429,7 @@
 			(pintype "passive")
 			(uuid "e16bc7f7-cbc5-40f7-be47-dcdbac4636a0")
 		)
-		(pad "18" thru_hole oval
+		(pad "18" thru_hole circle
 			(at 2.54 20.32 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -1459,7 +1440,7 @@
 			(pintype "passive")
 			(uuid "c2a8dba8-cb96-4d8d-92cd-d9a9974ebc4b")
 		)
-		(pad "19" thru_hole oval
+		(pad "19" thru_hole circle
 			(at 0 22.86 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -1470,7 +1451,7 @@
 			(pintype "passive")
 			(uuid "fcce0c84-849e-4149-a519-87f1478e19a3")
 		)
-		(pad "20" thru_hole oval
+		(pad "20" thru_hole circle
 			(at 2.54 22.86 180)
 			(size 1.7 1.7)
 			(drill 1)
@@ -1482,7 +1463,7 @@
 			(uuid "bccafb2f-6d75-47b5-a434-2ac6ace291d2")
 		)
 		(embedded_fonts no)
-		(model "${KICAD8_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_2x10_P2.54mm_Vertical.wrl"
+		(model "${KICAD10_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_2x10_P2.54mm_Vertical.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -1498,8 +1479,8 @@
 		(layer "F.Cu")
 		(uuid "b2830f59-c715-48ad-b4db-f942c7a9f2eb")
 		(at 105.5 102.75)
-		(descr "Mounting Hole 3.2mm, M3, DIN965")
-		(tags "mounting hole 3.2mm m3 din965")
+		(descr "Mounting Hole 3.2mm, M3, generated by kicad-footprint-generator mountinghole.py")
+		(tags "mountinghole M3 DIN965")
 		(property "Reference" "H3"
 			(at 0 -3.8 0)
 			(layer "F.SilkS")
@@ -1542,6 +1523,18 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "KiLib_Generator" "mounting_hardware/mounting_hole"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "43c2fd0a-5aed-4d51-8221-091aa8e8ebcc")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -1591,18 +1584,21 @@
 			(drill 3.2)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
+			(zone_connect 2)
 			(uuid "b98e8c43-bb1d-4a3b-8b64-91fdd8f8f398")
 		)
 		(pad "1" connect circle
 			(at 0 0)
 			(size 5.6 5.6)
 			(layers "F.Cu" "F.Mask")
+			(zone_connect 2)
 			(uuid "392ec6a0-acff-4884-bb97-1799c614d3dd")
 		)
 		(pad "1" connect circle
 			(at 0 0)
 			(size 5.6 5.6)
 			(layers "B.Cu" "B.Mask")
+			(zone_connect 2)
 			(uuid "e59a920e-16db-4cf6-bd2c-3ca58e45caab")
 		)
 		(embedded_fonts no)
@@ -1611,8 +1607,8 @@
 		(layer "F.Cu")
 		(uuid "d15f42dc-b478-4a4a-9386-d5df14e928f0")
 		(at 127.75 102.5)
-		(descr "Mounting Hole 3.2mm, M3, DIN965")
-		(tags "mounting hole 3.2mm m3 din965")
+		(descr "Mounting Hole 3.2mm, M3, generated by kicad-footprint-generator mountinghole.py")
+		(tags "mountinghole M3 DIN965")
 		(property "Reference" "H1"
 			(at 0 -3.8 0)
 			(layer "F.SilkS")
@@ -1655,6 +1651,18 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "KiLib_Generator" "mounting_hardware/mounting_hole"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "c001bf54-b2d4-4304-8750-470dd3dc7651")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -1704,18 +1712,21 @@
 			(drill 3.2)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
+			(zone_connect 2)
 			(uuid "448ca31b-ffcc-4a7a-b75c-fd6b6a5977da")
 		)
 		(pad "1" connect circle
 			(at 0 0)
 			(size 5.6 5.6)
 			(layers "F.Cu" "F.Mask")
+			(zone_connect 2)
 			(uuid "09e02041-f505-4e76-a27f-72426026f574")
 		)
 		(pad "1" connect circle
 			(at 0 0)
 			(size 5.6 5.6)
 			(layers "B.Cu" "B.Mask")
+			(zone_connect 2)
 			(uuid "ec8ca4d0-37e1-42f6-a4b8-d7c84ed92a69")
 		)
 		(embedded_fonts no)

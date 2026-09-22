@@ -4336,7 +4336,7 @@
 			)
 		)
 	)
-	(global_label "AP1_LED"
+	(global_label "AP2_LED"
 		(shape input)
 		(at 212.09 87.63 90)
 		(fields_autoplaced yes)
@@ -4384,7 +4384,7 @@
 			)
 		)
 	)
-	(global_label "AP2_LED"
+	(global_label "AP1_LED"
 		(shape input)
 		(at 214.63 87.63 90)
 		(fields_autoplaced yes)

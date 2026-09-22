@@ -62,34 +62,34 @@ whenever it is plugged in and falls back to USB when it is not — see
 
 ## Interconnect
 
+**Every cable in the unit is straight through: pin 1 to pin 1.** It was not
+always so, and the boards still carry the marks that say which pin is which,
+so you can check rather than trust this page.
+
 ### Mainboard → Korry (`BTN+LED`, 3-pin)
 
-| Mainboard `J*` | Korry `J1` | Signal |
+| pin | Signal | Marked |
 |---|---|---|
-| pin 1 | pin 3 | GND |
-| pin 2 | pin 2 | annunciator LED, driven by an MCU pin through the 220 Ω on the Korry board |
-| pin 3 | pin 1 | button to GND, read through a CD74HC4067 |
-
-> **The pinouts are mirrored.** Mainboard pin 1 is GND while Korry pin 1 is the
-> button. A straight-through 3-wire cable would swap GND and the button line;
-> the connector is plugged the other way round, which crosses 1↔3 and leaves
-> pin 2 in the middle. Worth aligning in a future revision.
+| 1 | GND | `GND` on the mainboard, `G` on the Korry |
+| 2 | annunciator LED, driven by an MCU pin through the 220 Ω on the Korry board | `LED` / `L` |
+| 3 | button to GND, read through a CD74HC4067 | `BTN` / `B` |
 
 ### LEDModule → Korry (`BK_LED`, 2-pin)
 
-| LEDModule `J1`/`J2` | Korry `J2` | Signal |
+| pin | Signal | Marked |
 |---|---|---|
-| even pin | pin 1 | +5 V |
-| odd pin | pin 2 | switched return, through the 91 Ω on the Korry board |
-
-The same mirroring applies here.
+| 1 | +5 V | `+` on the odd row of the LEDModule, `+` on the Korry |
+| 2 | switched return, through the 91 Ω on the Korry board | `-` |
 
 ### Backlighting_Dimmer → LEDModule (`BOARD_CONN`, screw terminal)
 
-| Dimmer `J12`/`J13`/`J14` | LEDModule `J11` | Signal |
-|---|---|---|
-| pin 1 | pin 2 | +5 V, always present |
-| pin 2 | pin 1 | return, switched to GND by the IRLIZ44N |
+| pin | Signal |
+|---|---|
+| 1 | +5 V, always present |
+| 2 | return, switched to GND by the IRLIZ44N |
+
+The dimmer's three outputs are marked `TO LEDMODULE`, the LEDModule's input
+`5V IN`, and both have a `+` and a `-` next to the screws.
 
 ### PSU → consumers
 
@@ -231,12 +231,31 @@ of the three paths, in 35 µm copper:
 The `5V_EXT` spine below y 55 and the tap to `R32` stay at 0.3 mm on purpose:
 from there down only the `SEL` divider draws, which is microamps.
 
+## Reading the boards
+
+The silkscreen is meant to be enough on its own: every connector says what
+plugs into it and every pin says what it carries, so you can wire the unit
+with the boards in front of you and the schematic only for the details.
+
+| Board | What is printed |
+|---|---|
+| `Mainboard` | the function on each connector (`APPR`, `R_FD`, `HDG_ENC`…) and, next to the pins, `GND` / `LED` / `BTN`, `L` / `R` on the encoders, `VOR` / `ADF`, `hPa` / `inHg`. `J13` carries `5V from PSU` with `GND` and `5V` on its two screws |
+| `PSU` | `9V IN` on `J1`, `5V BACKLIGHT` on `J2`–`J4`, `5V MAINBOARD` on `J5`, and a `+` beside the live screw of every terminal |
+| `Backlighting_Dimmer` | `5V IN` on the input, `TO LEDMODULE` on the three outputs, `Backlighting POT` on the potentiometer header |
+| `Backlighting_LEDModule` | `5V IN` on the input, `+` and `-` beside its screws and beside both output rows |
+| `Korry_Large` | `BTN+LED` and `BK_LED` on the two connectors, `G`, `L` and `B` beside pins 1, 2 and 3, `+` and `-` beside the backlight connector and beside each LED on the back, and the two resistor values, 220 and 91, which are otherwise identical parts |
+| `Korry_Small` | the same, with `+5` and `L` on the backlight connector and a `+` beside each LED on the back |
+
+Component values live on `F.Silkscreen`, not on `F.Fab`, so they reach the
+board. Values are never edited to make a label: where a connector's value is
+the name of the terminal block, the value stays where it is and a separate
+piece of text carries the meaning.
+
 ## Known issues
 
 | Board | Issue |
 |---|---|
 | `Backlighting_Dimmer`, `Backlighting_LEDModule` | The screw terminal footprint `TerminalBlock:TerminalBlock_bornier-2_P5.08mm` no longer exists in the KiCad library. KiCad 10 does ship seven other 2-pin 5.08 mm blocks, but none with the same pads, so retargeting it would change the drill and pad geometry. The copy embedded in the board is correct and is what gets manufactured; only the library link dangles. This is **not** the same part as the Phoenix `PT-1,5-2-5.0-H` on the `PSU` and the `Mainboard`, which resolves normally and renders in 3D |
-| `Korry_Large` | Four `+` and `-` markers on the back silkscreen are not mirrored. Both glyphs are symmetric so nothing reads wrong, and since they are justified `left bottom`, adding the mirror flag would shift them by about a glyph width. Left alone on purpose |
 
 ## Libraries you will need
 
@@ -263,24 +282,25 @@ parity issues:
 | Board | DRC |
 |---|---|
 | `Mainboard` | clean |
-| `PSU` | 3, the `PCM_LED_SMD_AKL` library |
-| `Backlighting_Dimmer` | 14, library only |
-| `Backlighting_LEDModule` | 3, library only |
-| `Korry_Large` | 10: 6 library, 4 the back-silkscreen markers described above |
-| `Korry_Small` | 6, library only |
+| `PSU` | 3 |
+| `Backlighting_Dimmer` | 14 |
+| `Backlighting_LEDModule` | 3 |
+| `Korry_Large` | 6 |
+| `Korry_Small` | 6 |
+
+Every one of those is a missing library, nothing else.
 
 ## Gotchas
 
 - **Anything edited outside KiCad leaves the ground pour stale.** The stored
   fill is the one computed before the edit, and until you open the board and
   press `B` DRC invents clearance, hole and solder-mask violations that all
-  name `Zone [GND]` and none of which are real. The `Mainboard` and the `PSU`
-  are committed with their zones freshly filled; if you edit the files by script,
-  refill before generating production output.
-- **Component values are on `F.Silkscreen`, not `F.Fab`**, so they get
-  printed and you can read a 1206 while you solder it. If you ever run
-  *Update Footprints from Library*, untick **Reset text layers and
-  visibilities** and **Reset text effects** or they all go back to `F.Fab`.
+  name `Zone [GND]` and none of which are real. Every board here is committed
+  with its zones freshly filled; if you edit the files by script, refill
+  before generating production output.
+- **If you ever run *Update Footprints from Library*, untick "Reset text
+  layers and visibilities" and "Reset text effects".** Without that, every
+  component value goes back to `F.Fab` and stops being printed.
 - **`F8` in Pcbnew clears `exclude_from_pos_files` on the seven mounting
   holes**, which puts them into the pick-and-place file. Re-check before
   generating production output.

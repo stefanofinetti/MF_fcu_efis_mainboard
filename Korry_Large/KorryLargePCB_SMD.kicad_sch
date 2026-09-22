@@ -3021,6 +3021,7 @@
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x03")
 		(at 190.5 78.74 0)
+		(mirror x)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)

@@ -1956,6 +1956,7 @@
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x03")
 		(at 181.61 83.82 0)
+		(mirror x)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)

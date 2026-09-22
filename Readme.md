@@ -268,25 +268,34 @@ Install these from the Plugin and Content Manager to clear them:
 | Digi-Key library | `dk_Tactile-Switches`, `dk_Clock-Timing-Programmable-Timers-and-Oscillators` |
 | SL Screw Terminal | `PCM_SL_Screw_Terminal` |
 
-The remaining `lib_footprint_mismatch` warnings are footprints that changed
-between the KiCad version each board was drawn in and version 10. Running
-`Update Footprints from Library` clears them, but it does change pad and
-silkscreen geometry, so it is worth reading the diff first. It has been run
-on the `PSU`.
+Every board has had `Update Footprints from Library` run on it, so the
+footprints are the KiCad 10 revisions and no `lib_footprint_mismatch`
+remains. If you run it again, untick **Reset text layers and visibilities**
+and **Reset text effects**, or every component value goes back to `F.Fab`
+and stops being printed.
 
-What each board reports today, all of them with 0 unconnected items and 0
+What each board reports today, with all six at 0 unconnected items and 0
 parity issues:
 
-| Board | DRC |
-|---|---|
-| `Mainboard` | clean |
-| `PSU` | 3 |
-| `Backlighting_Dimmer` | 14 |
-| `Backlighting_LEDModule` | 3 |
-| `Korry_Large` | 6 |
-| `Korry_Small` | 6 |
+| Board | DRC | ERC |
+|---|---|---|
+| `Mainboard` | clean | clean |
+| `PSU` | clean | 5, the `PCM_SL_Screw_Terminal` symbols |
+| `Backlighting_Dimmer` | 1 | 2 |
+| `Backlighting_LEDModule` | clean | clean |
+| `Korry_Large` | clean | 3 |
+| `Korry_Small` | clean | 2 |
 
-Every one of those is a missing library, nothing else.
+The one DRC warning is on the dimmer and is deliberate: the wire-entry
+drawing of `J32` reaches within 0.02 mm of the board edge, so a sliver of
+ink gets clipped. Moving `J32` down is not possible — `C4` sits 0.04 mm
+under its courtyard and the usable window is 10.49 mm tall for a 10 mm body.
+
+The ERC warnings are of two kinds. Some are the libraries above, not
+installed. The rest are `lib_symbol_mismatch`: the `LED` symbol on both
+Korry boards and `IRLIZ44N` on the dimmer are older revisions than the ones
+in KiCad 10. *Update Symbols from Library* in Eeschema clears those, the way
+the footprint update cleared theirs.
 
 ## Gotchas
 

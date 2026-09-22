@@ -905,7 +905,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "dk_Tactile-Switches:1825910-6"
+		(symbol "1825910-6:1825910-6"
 			(pin_names
 				(offset 1.016)
 			)
@@ -2681,7 +2681,7 @@
 		)
 	)
 	(symbol
-		(lib_id "dk_Tactile-Switches:1825910-6")
+		(lib_id "1825910-6:1825910-6")
 		(at 236.22 53.34 0)
 		(unit 1)
 		(body_style 1)

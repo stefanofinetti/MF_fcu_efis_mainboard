@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "NE555P")(type "KiCad")(uri "${KIPRJMOD}/NE555P.kicad_sym")(options "")(descr "Timer NE555 in DIP-8, il simbolo che la scheda usa da sempre. Locale al progetto, cosi il repository non dipende dalla libreria Digi-Key."))
+)

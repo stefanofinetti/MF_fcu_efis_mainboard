@@ -265,17 +265,23 @@ Install these from the Plugin and Content Manager to clear them:
 | Library | Used for |
 |---|---|
 | Alternate KiCad Library | the LED and Schottky footprints: `PCM_LED_AKL`, `PCM_LED_SMD_AKL`, `PCM_Diode_Schottky_AKL`, `PCM_Diode_SMD_AKL` |
-| Digi-Key library | two symbols: the NE555 on the dimmer and the tactile switch on `Korry_Large` |
 
-Both symbols are embedded in the files and are correct, so the boards build
-without the library; only the link dangles. They are the last two things
-asking for a download, and they stay: the KiCad 555 symbols lay their pins
-out differently, and `Switch:SW_Push_Dual` numbers its pins 1-3 and 2-4
-where the Digi-Key switch numbers them 1-2 and 3-4 — the positions match but
-the numbering does not, so swapping it would change which pins are shorted
-inside the button. The screw terminals used to need a third library and no
-longer do: they are `Connector:Screw_Terminal_01x02`, which ships with
-KiCad.
+That is the only one left. Three others used to be needed and are not any
+more. The screw terminals are now `Connector:Screw_Terminal_01x02`, which
+ships with KiCad. The two symbols that came from the Digi-Key library, the
+NE555 on the dimmer and the tactile switch on `Korry_Large`, now live beside
+their own projects:
+
+| File | Symbol |
+|---|---|
+| `Mainboard/TPS2115A.kicad_sym` | the supply selector |
+| `Backlighting_Dimmer/NE555P.kicad_sym` | the timer |
+| `Korry_Large/1825910-6.kicad_sym` | the tactile switch |
+
+Those are the symbols the boards were drawn with, not library equivalents,
+which matters for the switch: `Switch:SW_Push_Dual` puts its pins in the same
+places but numbers them 1-3 and 2-4 where this one numbers them 1-2 and 3-4,
+so substituting it would change which pins are shorted inside the button.
 
 Every board has had `Update Footprints from Library` run on it, so the
 footprints are the KiCad 10 revisions and no `lib_footprint_mismatch`
@@ -290,9 +296,9 @@ parity issues:
 |---|---|---|
 | `Mainboard` | clean | clean |
 | `PSU` | clean | clean |
-| `Backlighting_Dimmer` | 1 | 1 |
+| `Backlighting_Dimmer` | 1 | clean |
 | `Backlighting_LEDModule` | clean | clean |
-| `Korry_Large` | clean | 1 |
+| `Korry_Large` | clean | clean |
 | `Korry_Small` | clean | clean |
 
 The one DRC warning is on the dimmer and is deliberate: the wire-entry
@@ -300,7 +306,6 @@ drawing of `J32` reaches within 0.02 mm of the board edge, so a sliver of
 ink gets clipped. Moving `J32` down is not possible — `C4` sits 0.04 mm
 under its courtyard and the usable window is 10.49 mm tall for a 10 mm body.
 
-The two ERC warnings are the two Digi-Key symbols above, and nothing else.
 
 ## Gotchas
 

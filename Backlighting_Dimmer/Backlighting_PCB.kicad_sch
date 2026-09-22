@@ -1293,7 +1293,7 @@
 		)
 		(embedded_fonts no)
 		)
-		(symbol "dk_Clock-Timing-Programmable-Timers-and-Oscillators:NE555P"
+		(symbol "NE555P:NE555P"
 			(pin_names
 				(offset 1.016)
 			)
@@ -4721,7 +4721,7 @@
 		)
 	)
 	(symbol
-		(lib_id "dk_Clock-Timing-Programmable-Timers-and-Oscillators:NE555P")
+		(lib_id "NE555P:NE555P")
 		(at 190.5 93.98 0)
 		(unit 1)
 		(body_style 1)

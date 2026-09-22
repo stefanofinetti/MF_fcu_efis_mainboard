@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "1825910-6")(type "KiCad")(uri "${KIPRJMOD}/1825910-6.kicad_sym")(options "")(descr "Pulsante tattile 6x6 a quattro pioli, con i pin 1-2 in corto da una parte e 3-4 dall altra. Locale al progetto: l equivalente di libreria li numera in modo diverso."))
+)

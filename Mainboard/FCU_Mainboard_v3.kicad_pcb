@@ -14042,7 +14042,7 @@
 			(uuid "7e14906f-c81b-409e-940c-7e2e3e199bd1")
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Crystal.3dshapes/Crystal_SMD_EuroQuartz_MQ-4Pin_7.0x5.0mm.step"
+		(model "${KICAD10_3DMODEL_DIR}/Crystal.3dshapes/Crystal_SMD_WE_12SMX-4Pin_7.0x5.0mm.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -15109,6 +15109,17 @@
 			(uuid "599a5b54-cac2-43d5-a4bd-fd7e1bc2216f")
 		)
 		(embedded_fonts no)
+		(model "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/TSSOP-24_4.4x7.8mm_P0.65mm.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "MountingHole:MountingHole_2.7mm_M2.5_DIN965_Pad_TopBottom"
 		(layer "F.Cu")
@@ -16657,7 +16668,7 @@
 			(uuid "5724f484-7997-4d66-8a65-3ca6d5242a42")
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Crystal.3dshapes/Crystal_SMD_EuroQuartz_MQ-4Pin_7.0x5.0mm.step"
+		(model "${KICAD10_3DMODEL_DIR}/Crystal.3dshapes/Crystal_SMD_WE_12SMX-4Pin_7.0x5.0mm.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -34279,6 +34290,17 @@
 			(uuid "d2692db8-7a44-4798-86c3-481f6cd39432")
 		)
 		(embedded_fonts no)
+		(model "${KICAD10_3DMODEL_DIR}/Package_QFP.3dshapes/TQFP-100_14x14mm_P0.5mm.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 		(layer "F.Cu")

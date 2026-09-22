@@ -39,22 +39,26 @@ the PC over USB, so it can be unplugged and moved.
                               │   (2 A)     D2 ◄──┘          │          ├──► J3 ─┤
                               │             catch      C2 ‖ C4          └──► J4 ─┤
                               │                                                  │
-                              └──► F3 ──► P78A05-1000 ──► J5 ──► Mainboard        │
-                                 (0.5 A)   C5‖C6  C7‖C8          (clean 5 V)      │
-                                                                                  │
- PC ──USB──► Mainboard                                    Backlighting_Dimmer ◄───┘
-   (powered USB3 hub)                                            │
-        │                                                        └──► 3 × LEDModule
-        └──► 20 × Korry  (green annunciator LED + button)                  │
-                   └──────────── white backlight LED ◄──────────────────────┘
+                              └──► F3 ──► P78A05-1000 ──► J5 ──► Mainboard J13    │
+                                 (0.5 A)   C5‖C6  C7‖C8                  │        │
+                                                                     IN1 ▼        │
+ PC ──USB──► Mainboard P1 ──► VBUS ──────────────► IN2 ──► U8 TPS2115A            │
+   (powered USB3 hub)                                         OUT ──► +5V         │
+        │                                                                         │
+        └──► 20 × Korry  (green annunciator LED + button)                         │
+                   │                                                              │
+                   │                            Backlighting_Dimmer ◄─────────────┘
+                   │                                    │
+                   │                                    └──► 3 × LEDModule
+                   └──────────── white backlight LED ◄───────────┘
                                  + 6 LED strip segments
 ```
 
 Two supply chains that share only ground. The backlighting, which draws the
-real current, runs off the mains adapter through the buck. The mainboard runs
-off USB today; `J5` is there for the automatic selector that will let it take
-the adapter instead whenever one is plugged in. That selector is not built
-yet — see *Known issues*.
+real current, runs off the mains adapter through the buck. The mainboard takes
+whichever of the two is available: `U8` picks the adapter through `J13`
+whenever it is plugged in and falls back to USB when it is not — see
+*Mainboard selector*.
 
 ## Interconnect
 
@@ -90,8 +94,9 @@ The same mirroring applies here.
 ### PSU → consumers
 
 `J2`, `J3` and `J4` are three taps on one node, not three independent lines.
-There is no per-output fusing: the only protection is the 1 A polyfuse on the
-9 V input, which caps the whole board at roughly 1.4 A at 5 V.
+There is no per-output fusing. Protection is per *branch*, not per output:
+`F2` (2 A) covers everything downstream of the buck, `F3` (0.5 A) covers the
+mainboard regulator, and a fault on one cannot take the other down.
 
 ## Current budget
 
@@ -107,8 +112,10 @@ Calculated where the resistors are known, estimated elsewhere.
 | 6 LED strip segments, 3528 | backlight 5 V | 360–720 mA |
 | **Backlighting total, from the adapter** | | **780–1140 mA** |
 
-The adapter supplies 27 W and the unit uses under 7 W. The binding constraint
-is the PSU board's own 1 A input polyfuse, not the adapter.
+The adapter supplies 27 W and the unit uses under 7 W. Nothing is binding any
+more: `F2` was the constraint when it was a 1 A part, which derated to under
+0.8 A of hold current against the 0.75 A the buck actually draws. At 2 A it
+has margin to spare.
 
 ## PSU revision
 
@@ -118,8 +125,8 @@ still the old one.
 
 | Change | Why |
 |---|---|
-| **`D2` added** — SS54 Schottky, cathode on the switch node, anode to ground | A non-synchronous buck has nowhere for the inductor current to go when the switch opens. Without an external diode it freewheels through the substrate diode of the LM2596 itself: roughly 0.4 W of extra dissipation inside the package on top of its own 0.7 W, and substrate injection the part is not specified for. This is why the board works and why it degrades |
-| **`C4` added** — 220 µF radial electrolytic in parallel with `C2` | The LM2596 control loop needs some ESR on the output. `C2` is a ceramic, which has almost none. The RMP V5, same family of design but with electrolytics at its regulator, has never misbehaved |
+| **`D2` added** — 1N5822, cathode on the switch node, anode to ground | A non-synchronous buck has nowhere for the inductor current to go when the switch opens. Without an external diode it freewheels through the substrate diode of the LM2596 itself: roughly 0.4 W of extra dissipation inside the package on top of its own 0.7 W, and substrate injection the part is not specified for. This is why the board works and why it degrades |
+| **`C4` added** — 220 µF radial electrolytic in parallel with `C2` | The LM2596 control loop needs some ESR on the output, and `C2` was a ceramic with almost none. `C2` has since become an electrolytic too, so the two now share the job. The RMP V5, same family of design but with electrolytics at its regulator, has never misbehaved |
 | **`F2` 1 A → 2 A** (`MF-RHT100` → `MF-RHT200`) | At 1.14 A out the input draws about 0.75 A. Derated for the temperature inside a printed case, a 1 A polyfuse holds under 0.8 A — too close to nuisance tripping. Pads are identical, so the swap costs nothing in layout |
 | **Power section re-laid out** | `U4` pin 2, the cathode of `D2` and pin 1 of `L1` now sit on one straight line at y = 64.95, and `C1` sits 4 mm under the VIN pin. The commutation loop went from *nonexistent* to about 4 mm of forward track each side |
 
@@ -168,20 +175,20 @@ regulator chain lives in the new strip at x 150..170, so the buck section
 keeps its original placement and its original routing, and every track stays
 on the front: the bottom layer is an uninterrupted ground plane.
 
-Every track is on the front. **The bottom layer is an uninterrupted ground
-plane**, so the return current of each loop runs directly beneath its outward
-track and the enclosed area stays small. Stitching vias next to the ground
-terminals of `C1`, `C2`, `C4` and the anode of `D2` are tied to their pads by
-short tracks rather than through the thermal spokes.
+All 55 tracks are on the front, so the return current of each loop runs
+directly beneath its outward track and the enclosed area stays small.
+Stitching vias next to the ground terminals of `C1`, `C2`, `C4` and the anode
+of `D2` are tied to their pads by short tracks rather than through the
+thermal spokes.
 
-Not changed: the outline, the four mounting holes and the positions of `J1`
-to `J4`, so the board still drops into the same case with the same wiring.
+The outline and the four mounting holes did move with the enlargement, so the
+printed base has to be reprinted or its brass inserts moved. The positions of
+`J1` to `J4` are unchanged, so the wiring loom stays as it is.
 
 ## Mainboard selector
 
-The schematic half is done. `U8` is a TPS2115A power mux: `IN1` takes the
-clean 5 V from the PSU's `J5`, `IN2` takes USB `VBUS`, and `OUT` becomes the
-board's `+5V`. `D0` is tied to ground and `D1` comes from a 100k/100k divider
+`U8` is a TPS2115A power mux: `IN1` takes the clean 5 V from the PSU's `J5`,
+`IN2` takes USB `VBUS`, and `OUT` becomes the board's `+5V`. `D0` is tied to ground and `D1` comes from a 100k/100k divider
 on the incoming rail, which makes the choice deterministic rather than
 "whichever input happens to be higher": the external supply wins whenever it
 is above about 4 V, and the board falls back to USB below that.
@@ -207,21 +214,31 @@ from x 265 to x 285. The other five stay put. The 100 mm depth is untouched.
 The whole selector sits in that new strip, in a column from `J13` at the top
 down through `U8`, `C27` and the divider.
 
-**The new connections are not routed yet.** DRC reports 20 unconnected items
-on `VBUS`, `5V_EXT`, `SEL`, `Net-(U8-ILIM)`, `+5V` and `GND`; the GND ones
-resolve on the first zone refill, the rest need routing. Cutting `P1` pin 1
-out of `+5V` also split that net into two islands that both now hang off
-`U8` pin 7, and it left the 60 mm spine at y 105.72 dangling at its west end.
-Schematic parity is clean, so the ratlines are correct and the board is ready
-for the autorouter.
+The cluster is routed and the board reports 0 violations, 0 unconnected items
+and 0 parity issues.
+
+The three power connections around the selector run at 1 mm, the width their
+netclass asks for. They cannot run that wide the whole way: they leave pins
+6, 7 and 8 of a TSSOP at 0.65 mm pitch, where the pad itself is only 0.4 mm
+tall, so each stays at 0.4 mm for the three to six millimetres it travels
+alongside the other two and widens as soon as they diverge. Series resistance
+of the three paths, in 35 µm copper:
+
+| Path | |
+|---|---|
+| `5V_EXT`, `J13` → `U8` pin 8 | 19 mΩ |
+| `+5V`, `U8` pin 7 → `C27` | 13 mΩ |
+| `VBUS`, `C26` → `U8` pin 6 | 13 mΩ |
+
+The `5V_EXT` spine below y 55 and the tap to `R32` stay at 0.3 mm on purpose:
+from there down only the `SEL` divider draws, which is microamps.
 
 ## Known issues
 
 | Board | Issue |
 |---|---|
-| `PSU` | **Boards made from an earlier revision have no catch diode.** If you already built one, do not run it as it is: either remake it from the current files, or fit a 3–5 A / 40 V Schottky on the back, cathode to `L1` pin 1 and anode to the ground plane about 4 mm away, near the via at (129.0, 71.35). Check continuity to `J1` pin 2 with a meter before soldering |
-| `Mainboard` | **The automatic supply selector is on the schematic but not on the board.** `U8` (TPS2115A), `J13`, `C25`–`C27` and `R32`–`R34` exist in `pwr_conn.kicad_sch` and ERC passes, but the PCB does not carry them yet, so schematic parity reports eight missing footprints. The board has no contiguous free area left for them near the power section — see *Mainboard selector* below |
-| `Backlighting_Dimmer`, `Backlighting_LEDModule` | The screw terminal footprint `TerminalBlock:TerminalBlock_bornier-2_P5.08mm` no longer exists in the KiCad library. KiCad 10 ships no 2-pin 5.08 mm terminal block at all, so there is nothing to point it at: retargeting it would change the pad geometry of a board that is already made. The copy embedded in the board is correct and is what gets manufactured; only the library link dangles |
+| `PSU` | **Boards made from an earlier revision have no catch diode.** If you already built one, do not run it as it is: either remake it from the current files, or fit a 3–5 A / 40 V Schottky on the back, cathode to `L1` pin 1 and anode to the ground plane about 4 mm away, near the via at (129.0, 71.35) — those are coordinates in the *old* layout, which is the one such a board was made from, not in the files here. Check continuity to `J1` pin 2 with a meter before soldering |
+| `Backlighting_Dimmer`, `Backlighting_LEDModule` | The screw terminal footprint `TerminalBlock:TerminalBlock_bornier-2_P5.08mm` no longer exists in the KiCad library. KiCad 10 does ship seven other 2-pin 5.08 mm blocks, but none with those pads, so retargeting it would change the drill and pad geometry of a board that is already made. The copy embedded in the board is correct and is what gets manufactured; only the library link dangles. This is **not** the same part as the Phoenix `PT-1,5-2-5.0-H` on the `PSU` and the `Mainboard`, which resolves normally and renders in 3D |
 | `Korry_Large` | Four `+` and `-` markers on the back silkscreen are not mirrored. Both glyphs are symmetric so nothing reads wrong, and since they are justified `left bottom`, adding the mirror flag would shift them by about a glyph width. Left alone on purpose |
 
 ## Libraries you will need
@@ -241,20 +258,47 @@ The remaining `lib_footprint_mismatch` warnings are footprints that changed
 between the KiCad version each board was drawn in and version 10. Running
 `Update Footprints from Library` clears them, but it does change pad and
 silkscreen geometry, so it is worth reading the diff before doing it on a
-board that is already made.
+board that is already made. It has been run on the `PSU`, which is not built
+in its current form; the four boards that are already made still carry their
+original footprints on purpose.
+
+What each board reports today, all of them with 0 unconnected items and 0
+parity issues:
+
+| Board | DRC |
+|---|---|
+| `Mainboard` | clean |
+| `PSU` | 3, the `PCM_LED_SMD_AKL` library |
+| `Backlighting_Dimmer` | 14, library only |
+| `Backlighting_LEDModule` | 3, library only |
+| `Korry_Large` | 10: 6 library, 4 the back-silkscreen markers described above |
+| `Korry_Small` | 6, library only |
 
 ## Gotchas
 
-- **The `PSU` ground zone needs refilling.** The layout was edited outside
-  KiCad, so the stored fill is the one computed for the old component
-  positions. Open the board and press `B` before DRC or before generating
-  production files. Until you do, DRC reports about 56 clearance, hole and
-  solder-mask violations that are all the stale pour and nothing else.
+- **Anything edited outside KiCad leaves the ground pour stale.** The stored
+  fill is the one computed before the edit, and until you open the board and
+  press `B` DRC invents clearance, hole and solder-mask violations that all
+  name `Zone [GND]` and none of which are real. The `Mainboard` and the `PSU`
+  are committed with their zones freshly filled; if you edit the files by script,
+  refill before generating production output.
+- **Component values are on `F.Silkscreen`, not `F.Fab`**, so they get
+  printed and you can read a 1206 while you solder it. If you ever run
+  *Update Footprints from Library*, untick **Reset text layers and
+  visibilities** and **Reset text effects** or they all go back to `F.Fab`.
 - **`F8` in Pcbnew clears `exclude_from_pos_files` on the seven mounting
   holes**, which puts them into the pick-and-place file. Re-check before
   generating production output.
-- The two 0.4102 mm segments on `+3V3` next to the PCA9548A pad are a
-  deliberate neck. Widening them breaks clearance.
+- Five 3D models are missing because the KiCad 10 package does not ship
+  them, not because the path is wrong: the two Bourns polyfuses, the toroid,
+  the EuroQuartz crystal and the OST USB-B. `U1` on the `PSU` is a custom
+  footprint and never had one. Everything else renders.
+- Some tracks are narrower than their netclass and are meant to be. The two
+  0.4102 mm segments on `+3V3` are the breakout from pad 24 of the PCA9548A,
+  a 0.65 mm-pitch package whose pad is 0.41 mm tall: it is a dead-end spur
+  2.35 mm long carrying the mux's own supply. Same story for the 0.4 mm
+  necks at `U8` and the 0.5 mm spur to `U3` pin 24. Widening any of them
+  breaks clearance and buys nothing.
 - `VIN` has its own netclass with 0.1 mm clearance. Moving it to the `5V`
   class, which uses 0.2 mm, produces about 70 violations against existing
   copper.

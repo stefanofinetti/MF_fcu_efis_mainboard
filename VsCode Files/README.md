@@ -93,20 +93,40 @@ device set to match. The shipped `SF FCU.mfmc` is set to 0x70, i.e. SH1106.
 
 ## Building
 
+PlatformIO installed through the VS Code extension does not put `pio` on the
+PATH. Either open a terminal from the PlatformIO toolbar, or call it by its
+full path, `%USERPROFILE%\.platformio\penv\Scripts\pio.exe`.
+
 ```
 pio run -e SF_FCU_mega
 ```
 
 That produces version `0.0.1`. For a real one set `VERSION` — the build
 stamps it into both the firmware filename and `board.json`, which have to
-agree or MobiFlight will not find the firmware:
+agree or MobiFlight will not find the firmware. The version has to be an
+environment variable, so the syntax differs per shell:
 
 ```
+rem cmd.exe
+rmdir /s /q _build _dist
+set VERSION=1.1.0 && pio run -e SF_FCU_mega
+```
+
+```
+# PowerShell
+Remove-Item -Recurse -Force _build, _dist -ErrorAction SilentlyContinue
+$env:VERSION = "1.1.0"; pio run -e SF_FCU_mega
+```
+
+```
+# bash, and what the GitHub workflow uses
+rm -rf _build _dist
 VERSION=1.1.0 pio run -e SF_FCU_mega
 ```
 
-`copy_fw_files.py` only stamps the version when `_build/` does not yet exist,
-so delete `_build` and `_dist` before building a different version.
+Deleting `_build` and `_dist` first is not optional: `copy_fw_files.py` only
+stamps the version into `board.json` when `_build/` does not yet exist, so a
+leftover folder ships the previous version's json.
 
 The result is an installable ZIP in `_dist/`. Extract it into the `Community`
 folder of your MobiFlight installation, then flash from the Connector.

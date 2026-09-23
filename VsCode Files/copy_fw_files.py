@@ -3,7 +3,9 @@ import os, zipfile, shutil
 from pathlib import Path
 
 # Get the version number from the build environment.
-firmware_version = os.environ.get('VERSION', "")
+# .strip() perche' 'set VERSION=1.1.0 && ...' in cmd.exe lascia uno spazio
+# in coda, che finirebbe nel nome del file firmware
+firmware_version = os.environ.get('VERSION', "").strip()
 if firmware_version == "":
     firmware_version = "0.0.1"
 firmware_version = firmware_version.lstrip("v")

@@ -2,7 +2,9 @@ Import("env")
 import os
 
 # Get the version number from the build environment.
-firmware_version = os.environ.get('VERSION', "")
+# .strip() perche' 'set VERSION=1.1.0 && ...' in cmd.exe lascia uno spazio
+# in coda, che finirebbe nel nome del file firmware
+firmware_version = os.environ.get('VERSION', "").strip()
 
 # Clean up the version number
 if firmware_version == "":

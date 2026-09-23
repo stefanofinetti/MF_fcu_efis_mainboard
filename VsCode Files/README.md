@@ -109,7 +109,7 @@ environment variable, so the syntax differs per shell:
 ```
 rem cmd.exe
 rmdir /s /q _build _dist
-set VERSION=1.1.0 && pio run -e SF_FCU_mega
+set "VERSION=1.1.0" && pio run -e SF_FCU_mega
 ```
 
 ```

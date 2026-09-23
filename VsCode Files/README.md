@@ -54,6 +54,30 @@ multiplexer switch plus a 1 KB frame at 400 kHz. At 115200 baud more than 300
 bytes can arrive in that window, so the template's 96-byte receive buffer
 would drop characters. Do not lower it.
 
+### Footprint
+
+The ATmega2560 has 8 KB of RAM and MobiFlight reserves most of it up front:
+1600 bytes for the device arena (`MF_MAX_DEVICEMEM`) and 1000 for the input
+names (`MEMLEN_NAMES_BUFFER`). Those two are sized for the Connector config,
+not for this code, and are the wrong place to economise.
+
+What this project does instead:
+
+* **`build_unflags` turns off the device families the panel cannot have** —
+  segment displays, character LCD, steppers, servos, analog inputs and both
+  shift registers. Input multiplexers stay on; the panel uses them. Buttons,
+  encoders and outputs are core and always present. This is worth 181 bytes
+  of RAM and about 14 KB of flash. To get one back, delete its line.
+* **No `String` anywhere.** The values from the Connector live in fixed
+  buffers, so a redraw allocates nothing and the heap cannot fragment. The
+  only allocation left in the whole firmware is Adafruit's 1 KB frame buffer,
+  taken once at startup.
+
+Static RAM actually rose by 18 bytes when the `String`s went, because nine
+6-byte objects became nine 8-byte buffers. The point was never the 18 bytes:
+it was that each of those objects also held a heap block, and three more were
+allocated and freed on every single redraw.
+
 ## I2C address and display type
 
 The custom device takes the address of the PCA9548A, which the multiplexer's

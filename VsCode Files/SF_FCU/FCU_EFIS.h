@@ -36,6 +36,8 @@ private:
     OLEDInterface *oled;
 
     void setTCAChannel(byte i);
+    void updateDisplayEfis(uint8_t channel, uint8_t baroMode, uint8_t baroSelect,
+                           const char *valueHpa, const char *valueHg);
     void updateDisplayEfisLeft(void);
     void updateDisplayEfisRight(void);
     void updateDisplayFcuSpd(void);

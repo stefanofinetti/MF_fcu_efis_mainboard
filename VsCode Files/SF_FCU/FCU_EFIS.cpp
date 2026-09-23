@@ -2,47 +2,59 @@
 #include <Fonts/FreeSans18pt7b.h>
 #include <Fonts/FreeSans9pt7b.h>
 #include "Fonts/FreeSans8pt7b.h"
-#include "Fonts/FreeSans7pt7b.h"
-#include "Fonts/FreeSans6pt7b.h"
-#include "Fonts/DSEG7Classic_Regular14pt7b.h"
 #include "Fonts/DSEG7Classic_Regular15pt7b.h"
-#include "Fonts/DSEG7Classic_Regular16pt7b.h"
-#include "Fonts/DSEG7Classic_Regular18pt7b.h"
 #include "Fonts/DSEG7Classic_Regular20pt7b.h" //https://github.com/keshikan/DSEG and https://rop.nl/truetype2gfx/
 #include "Fonts/DSEG7Classic_Regular22pt7b.h"
 
+/* **********************************************************************************
+    The values arrive from the Connector as strings and are kept in fixed buffers
+    rather than String objects: nothing is allocated at runtime, so the heap cannot
+    fragment while the displays are being redrawn.
+
+    setValue() zero fills whatever follows the string, which matters: the padding
+    code below reads past the end of a value on purpose and expects to find 0
+    there. That was what Arduino's String did, and it is reproduced here.
+********************************************************************************** */
+#define VALUE_LEN 8
+
+static void setValue(char *dst, const char *src)
+{
+    strncpy(dst, src, VALUE_LEN - 1);
+    dst[VALUE_LEN - 1] = 0x00;
+}
+
 // Efis left
-uint8_t efisLeftBaroMode     = 0x00;
-uint8_t efisLeftBaroSelect   = 0x00;
-String  efisLeftBaroValueHpa = "1013";
-String  efisLeftBaroValueHg  = "2992";
+uint8_t efisLeftBaroMode              = 0x00;
+uint8_t efisLeftBaroSelect            = 0x00;
+char    efisLeftBaroValueHpa[VALUE_LEN] = "1013";
+char    efisLeftBaroValueHg[VALUE_LEN]  = "2992";
 
 // Efis right
-uint8_t efisRightBaroMode     = 0x00;
-uint8_t efisRightBaroSelect   = 0x00;
-String  efisRightBaroValueHpa = "1013";
-String  efisRightBaroValueHg  = "2992";
+uint8_t efisRightBaroMode              = 0x00;
+uint8_t efisRightBaroSelect            = 0x00;
+char    efisRightBaroValueHpa[VALUE_LEN] = "1013";
+char    efisRightBaroValueHg[VALUE_LEN]  = "2992";
 
 // FCU Speed
-uint8_t fcuSpeedManagedMode = 0x00;
-String  fcuSpeedValue       = "000";
-uint8_t fcuSpeedMode        = 0x00;
+uint8_t fcuSpeedManagedMode        = 0x00;
+char    fcuSpeedValue[VALUE_LEN]   = "000";
+uint8_t fcuSpeedMode               = 0x00;
 
 // FCU Hdg
-uint8_t fcuHdgManagedMode = 0x00;
-String  fcuHdgValue       = "000";
+uint8_t fcuHdgManagedMode      = 0x00;
+char    fcuHdgValue[VALUE_LEN] = "000";
 
 // FCU Trk Mode
 uint8_t fcuTrkMode = 0x00;
 
 // FCU Alt
-uint8_t fcuAltManagedMode = 0x00;
-String  fcuAltValue       = "00000";
+uint8_t fcuAltManagedMode      = 0x00;
+char    fcuAltValue[VALUE_LEN] = "00000";
 
 // FCU VS
-uint8_t fcuVsManagedMode = 0x00;
-String  fcuVsValue       = "00000";
-String  fcuVsValueFpa    = "-0.0";
+uint8_t fcuVsManagedMode          = 0x00;
+char    fcuVsValue[VALUE_LEN]     = "00000";
+char    fcuVsValueFpa[VALUE_LEN]  = "-0.0";
 
 // light test switch
 uint8_t lightTestOn = 0x00;
@@ -157,13 +169,13 @@ void FCU_EFIS::set(int16_t messageID, char *message)
 
     case 1:
         // Efis Left Baro Value Hpa
-        efisLeftBaroValueHpa = message;
+        setValue(efisLeftBaroValueHpa, message);
         updateDisplayEfisLeft();
         break;
 
     case 2:
         // Efis Left Baro Value Hg
-        efisLeftBaroValueHg = message;
+        setValue(efisLeftBaroValueHg, message);
         updateDisplayEfisLeft();
         break;
 
@@ -183,13 +195,13 @@ void FCU_EFIS::set(int16_t messageID, char *message)
 
     case 5:
         // Efis Right Baro Value Hpa
-        efisRightBaroValueHpa = message;
+        setValue(efisRightBaroValueHpa, message);
         updateDisplayEfisRight();
         break;
 
     case 6:
         // Efis Right Baro Value Hg
-        efisRightBaroValueHg = message;
+        setValue(efisRightBaroValueHg, message);
         updateDisplayEfisRight();
         break;
 
@@ -202,7 +214,7 @@ void FCU_EFIS::set(int16_t messageID, char *message)
 
     case 8:
         // Fcu Speed Value
-        fcuSpeedValue = message;
+        setValue(fcuSpeedValue, message);
         updateDisplayFcuSpd();
         break;
 
@@ -215,7 +227,7 @@ void FCU_EFIS::set(int16_t messageID, char *message)
 
     case 10:
         // Fcu Hdg Value
-        fcuHdgValue = message;
+        setValue(fcuHdgValue, message);
         updateDisplayFcuHdg();
         break;
 
@@ -236,7 +248,7 @@ void FCU_EFIS::set(int16_t messageID, char *message)
         break;
 
     case 13:
-        fcuAltValue = message;
+        setValue(fcuAltValue, message);
         updateDisplayFcuAlt();
         break;
 
@@ -246,12 +258,12 @@ void FCU_EFIS::set(int16_t messageID, char *message)
         break;
 
     case 15:
-        fcuVsValue = message;
+        setValue(fcuVsValue, message);
         updateDisplayFcuVs();
         break;
 
     case 16:
-        fcuVsValueFpa = message;
+        setValue(fcuVsValueFpa, message);
         updateDisplayFcuVs();
         break;
 
@@ -308,12 +320,16 @@ void FCU_EFIS::setTCAChannel(byte i)
     delay(5); // Pause
 }
 
-/*******************************************
-Has to be redone, only tests
-******************************************/
-void FCU_EFIS::updateDisplayEfisLeft(void)
+/* **********************************************************************************
+    Both EFIS displays draw the same thing, each from its own set of values, so one
+    function serves both: it is told which multiplexer channel to talk to and which
+    values to read.
+********************************************************************************** */
+void FCU_EFIS::updateDisplayEfis(uint8_t channel, uint8_t baroMode,
+                                 uint8_t baroSelect, const char *valueHpa,
+                                 const char *valueHg)
 {
-    setTCAChannel(TCA9548A_CHANNEL_EFIS_LEFT);
+    setTCAChannel(channel);
     // Clear the buffer
     oled->clearDisplay();
     oled->setTextColor(SSD1306_WHITE);
@@ -329,12 +345,12 @@ void FCU_EFIS::updateDisplayEfisLeft(void)
         oled->println("8888");
         oled->fillCircle(64, 60, 2, SSD1306_WHITE);
     } else {
-        if (efisLeftBaroMode == 2 || efisLeftBaroMode == 3) {
+        if (baroMode == 2 || baroMode == 3) {
             oled->setFont(&DSEG7Classic_Regular22pt7b);
             oled->setCursor(10, 60);
             oled->println("5td");
         } else {
-            if (efisLeftBaroMode == 0) {
+            if (baroMode == 0) {
                 oled->setFont(&FreeSans9pt7b);
                 oled->setTextSize(1);
                 oled->setCursor(0, 15);
@@ -345,70 +361,32 @@ void FCU_EFIS::updateDisplayEfisLeft(void)
                 oled->setCursor(85, 15);
                 oled->println("QNH");
             }
-            if (efisLeftBaroSelect == 0) {
+            if (baroSelect == 0) {
                 oled->setFont(&DSEG7Classic_Regular20pt7b);
                 oled->setCursor(0, 60);
-                oled->println(efisLeftBaroValueHg);
+                oled->println(valueHg);
                 oled->fillCircle(64, 60, 2, SSD1306_WHITE);
             } else {
                 oled->setFont(&DSEG7Classic_Regular20pt7b);
                 oled->setCursor(0, 60);
-                oled->println(efisLeftBaroValueHpa);
+                oled->println(valueHpa);
             }
         }
     }
     oled->display();
 
-} // updateDisplayEfisLeft
+} // updateDisplayEfis
+void FCU_EFIS::updateDisplayEfisLeft(void)
+{
+    updateDisplayEfis(TCA9548A_CHANNEL_EFIS_LEFT, efisLeftBaroMode, efisLeftBaroSelect,
+                      efisLeftBaroValueHpa, efisLeftBaroValueHg);
+}
 
 void FCU_EFIS::updateDisplayEfisRight(void)
 {
-    setTCAChannel(TCA9548A_CHANNEL_EFIS_RIGHT);
-    // Clear the buffer
-    oled->clearDisplay();
-    oled->setTextColor(SSD1306_WHITE);
-    if (lightTestOn == 1) {
-        oled->setFont(&FreeSans9pt7b);
-        oled->setTextSize(1);
-        oled->setCursor(20, 15);
-        oled->println("QFE");
-        oled->setCursor(85, 15);
-        oled->println("QNH");
-        oled->setFont(&DSEG7Classic_Regular20pt7b);
-        oled->setCursor(0, 60);
-        oled->println("8888");
-        oled->fillCircle(64, 60, 2, SSD1306_WHITE);
-    } else {
-        if (efisRightBaroMode == 2 || efisRightBaroMode == 3) {
-            oled->setFont(&DSEG7Classic_Regular22pt7b);
-            oled->setCursor(10, 60);
-            oled->println("5td");
-        } else {
-            if (efisRightBaroMode == 0) {
-                oled->setFont(&FreeSans9pt7b);
-                oled->setTextSize(1);
-                oled->setCursor(0, 15);
-                oled->println("QFE");
-            } else {
-                oled->setFont(&FreeSans9pt7b);
-                oled->setTextSize(1);
-                oled->setCursor(85, 15);
-                oled->println("QNH");
-            }
-            if (efisRightBaroSelect == 0) {
-                oled->setFont(&DSEG7Classic_Regular20pt7b);
-                oled->setCursor(0, 60);
-                oled->println(efisRightBaroValueHg);
-                oled->fillCircle(64, 60, 2, SSD1306_WHITE);
-            } else {
-                oled->setFont(&DSEG7Classic_Regular20pt7b);
-                oled->setCursor(0, 60);
-                oled->println(efisRightBaroValueHpa);
-            }
-        }
-    }
-    oled->display();
-} // updateDisplayEfisRight
+    updateDisplayEfis(TCA9548A_CHANNEL_EFIS_RIGHT, efisRightBaroMode, efisRightBaroSelect,
+                      efisRightBaroValueHpa, efisRightBaroValueHg);
+}
 
 void FCU_EFIS::updateDisplayFcuSpd(void)
 {
@@ -433,9 +411,6 @@ void FCU_EFIS::updateDisplayFcuSpd(void)
         if (fcuSpeedMode == 1) {
             oled->setCursor(65, 20);
             oled->println("MACH");
-            if (fcuSpeedValue[4] == 0x00) {
-                fcuSpeedValue[4] = '0';
-            }
         } else {
             oled->setCursor(25, 20);
             oled->println("SPD");
@@ -457,7 +432,7 @@ void FCU_EFIS::updateDisplayFcuSpd(void)
 
 void FCU_EFIS::updateDisplayFcuHdg(void)
 {
-    String strHdgValue = "000";
+    char strHdgValue[4] = "000";
 
     // FCU Hdg
     setTCAChannel(TCA9548A_CHANNEL_FCU_HDG);
@@ -563,7 +538,7 @@ void FCU_EFIS::updateDisplayFcuFpa(void)
 void FCU_EFIS::updateDisplayFcuAlt(void)
 {
 
-    String strAltValue = "00000";
+    char strAltValue[6] = "00000";
 
     setTCAChannel(TCA9548A_CHANNEL_FCU_ALT);
     // Clear the buffer
@@ -624,7 +599,7 @@ void FCU_EFIS::updateDisplayFcuAlt(void)
 
 void FCU_EFIS::updateDisplayFcuVs(void)
 {
-    String strVrValue = "0000";
+    char strVrValue[12] = "0000";
 
     setTCAChannel(TCA9548A_CHANNEL_FCU_VS);
 
@@ -731,10 +706,9 @@ void FCU_EFIS::updateDisplayFcuVs(void)
                     oled->setFont(&DSEG7Classic_Regular15pt7b);
                     oled->setCursor(0, 55);
 
+                    strcpy(strVrValue, fcuVsValueFpa);
                     if (fcuVsValueFpa[2] == 0x00) {
-                        strVrValue = fcuVsValueFpa + ".0";
-                    } else {
-                        strVrValue = fcuVsValueFpa;
+                        strcat(strVrValue, ".0");
                     }
                     oled->print(strVrValue);
                 } else {
@@ -742,11 +716,12 @@ void FCU_EFIS::updateDisplayFcuVs(void)
                     oled->setCursor(0, 50);
                     oled->print("+");
 
-                    if (fcuVsValueFpa == "0") {
-                        strVrValue = "0.0";
+                    if (strcmp(fcuVsValueFpa, "0") == 0) {
+                        strcpy(strVrValue, "0.0");
                     } else {
                         if (fcuVsValueFpa[1] == 0x00) {
-                            strVrValue = fcuVsValueFpa + ".0";
+                            strcpy(strVrValue, fcuVsValueFpa);
+                            strcat(strVrValue, ".0");
                         } else {
                             strVrValue[0] = fcuVsValueFpa[0];
                             strVrValue[1] = fcuVsValueFpa[1];

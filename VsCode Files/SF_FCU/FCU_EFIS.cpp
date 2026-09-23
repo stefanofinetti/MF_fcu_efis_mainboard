@@ -77,21 +77,18 @@ void FCU_EFIS::begin()
     if (!_initialised)
         return;
 
-    //**************************
-    // // Efis left
-    // //**************************
+    //**********************************************
+    // EFIS left
+    //**********************************************
     setTCAChannel(TCA9548A_CHANNEL_EFIS_LEFT);
     oled->begin(SCREEN_ADDRESS, true); // Address 0x3C default
-    oled->display();
     updateDisplayEfisLeft();
 
-    //**************************
-    // Efis right
-    //**************************
+    //**********************************************
+    // EFIS right
+    //**********************************************
     setTCAChannel(TCA9548A_CHANNEL_EFIS_RIGHT);
     oled->begin(SCREEN_ADDRESS, true); // Address 0x3C default
-    oled->display();
-    oled->setTextColor(SSD1306_WHITE);
     updateDisplayEfisRight();
 
     //**********************************************
@@ -398,7 +395,7 @@ void FCU_EFIS::updateDisplayEfisRight(void)
                 oled->setCursor(85, 15);
                 oled->println("QNH");
             }
-            if (efisRightBaroSelect == 0) { // send in ASCII
+            if (efisRightBaroSelect == 0) {
                 oled->setFont(&DSEG7Classic_Regular20pt7b);
                 oled->setCursor(0, 60);
                 oled->println(efisRightBaroValueHg);
